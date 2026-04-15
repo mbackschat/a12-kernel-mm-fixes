@@ -1,0 +1,498 @@
+{
+  "header": {
+    "id": "MM_Computation_1",
+    "modelType": "document",
+    "modelVersion": "28.3.0",
+    "locales": [
+      {
+        "code": "de_DE"
+      },
+      {
+        "code": "en_US"
+      }
+    ],
+    "labels": [],
+    "annotations": [
+      {
+        "name": "A12_fieldsOnly",
+        "value": ""
+      },
+      {
+        "name": "A12_variants",
+        "value": "a12"
+      }
+    ],
+    "modelReferences": []
+  },
+  "content": {
+    "modelInfo": {
+      "name": "MM_Computation_1",
+      "variant": "none",
+      "branch": "1",
+      "revision": "11.2",
+      "immutable": true
+    },
+    "modelConfig": {
+      "decimalSeparator": ".",
+      "timeZone": "Europe/Berlin",
+      "conditionLanguage": {
+        "code": "en_US"
+      }
+    },
+    "typeDefinitions": [
+      {
+        "id": "CONFIRM_1",
+        "name": "CONFIRM_1",
+        "fieldType": {
+          "type": "ConfirmType"
+        },
+        "revision": "1"
+      },
+      {
+        "id": "DESCRIPTION_TEXT_1",
+        "name": "DESCRIPTION_TEXT_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "lineBreaksPermitted": true,
+            "maxLength": 99999
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "LANGUAGE_TYPE_2",
+        "name": "LANGUAGE_TYPE_2",
+        "fieldType": {
+          "type": "StringType"
+        },
+        "revision": "2"
+      },
+      {
+        "id": "REFERENCE_1",
+        "name": "REFERENCE_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "maxLength": 714
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "TEXT_WITH_LINE_BREAKS_1",
+        "name": "TEXT_WITH_LINE_BREAKS_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "lineBreaksPermitted": true,
+            "maxLength": 99999
+          }
+        },
+        "revision": "1"
+      }
+    ],
+    "modelRoot": {
+      "rootGroups": [
+        {
+          "type": "Group",
+          "id": "f76c709095e91294161cdec441d833e2",
+          "name": "Data",
+          "Group": {
+            "repeatability": 1,
+            "elements": [
+              {
+                "type": "Group",
+                "id": "60fc433760a145c36f336779b2afff85",
+                "name": "Computation",
+                "Group": {
+                  "repeatability": 1,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "c68e66ea4d7cb31ca55dc3956f13e7d",
+                      "name": "name",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType",
+                          "StringType": {
+                            "errorMessage": [
+                              {
+                                "locale": "de_DE",
+                                "text": "Der Name darf nur aus einem Buchstaben, gefolgt von Buchstaben, Ziffern und Unterstrich bestehen."
+                              },
+                              {
+                                "locale": "en_US",
+                                "text": "The name must start with a letter followed by letters, digits and underscores."
+                              }
+                            ],
+                            "maxLength": 100,
+                            "pattern": "[a-zA-Z][a-zA-Z0-9_]*"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "name"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Name"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "8ed1283973692dc0e2d7f7998faefc4",
+                      "name": "id",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "b9a91c63f8490701bf24153954e5bde3",
+                      "name": "suppressInvalidCompareDecPlaces",
+                      "Field": {
+                        "fieldType": {
+                          "type": "ConfirmType"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "b4702f18aad9bf0109bd3fad868846d8",
+                      "name": "computedField",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "REFERENCE_1"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "error field"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Fehlerfeld"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "7397a0dae4bcff493ce1175ef2e3dd61",
+                      "name": "commonPrecondition",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "TEXT_WITH_LINE_BREAKS_1"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "8c9093d4973060045885b780f181cd0d",
+                      "name": "pure_ui_useCommonPrecondition",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "CONFIRM_1"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "4780428c0fbd54c6d421d94c35625e1f",
+                      "name": "roundingMode",
+                      "Field": {
+                        "fieldType": {
+                          "type": "EnumerationType",
+                          "EnumerationType": {
+                            "values": [
+                              {
+                                "value": "Exact",
+                                "label": [
+                                  {
+                                    "locale": "de_DE",
+                                    "text": "Exakt"
+                                  },
+                                  {
+                                    "locale": "en_US",
+                                    "text": "Exact"
+                                  }
+                                ]
+                              },
+                              {
+                                "value": "RoundUp",
+                                "label": [
+                                  {
+                                    "locale": "de_DE",
+                                    "text": "Aufrunden"
+                                  },
+                                  {
+                                    "locale": "en_US",
+                                    "text": "RoundUp"
+                                  }
+                                ]
+                              },
+                              {
+                                "value": "RoundDown",
+                                "label": [
+                                  {
+                                    "locale": "de_DE",
+                                    "text": "Abrunden"
+                                  },
+                                  {
+                                    "locale": "en_US",
+                                    "text": "RoundDown"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "c9d75327c0ef42f1782ea4c47f93bd10",
+                      "name": "ComputationAlternatives",
+                      "Group": {
+                        "repeatability": 100,
+                        "elements": [
+                          {
+                            "type": "Field",
+                            "id": "1e0008042dff469d4111e7f12a0ccc93",
+                            "name": "precondition",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "TEXT_WITH_LINE_BREAKS_1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Field",
+                            "id": "34c52f0816cdbd9709df1686d06e40a3",
+                            "name": "operation",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "TEXT_WITH_LINE_BREAKS_1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Field",
+                            "id": "b6c2e9e524b7ea88db68281ca56b2c41",
+                            "name": "toleranceRangeOp",
+                            "Field": {
+                              "fieldType": {
+                                "type": "EnumerationType",
+                                "EnumerationType": {
+                                  "values": [
+                                    {
+                                      "value": "DiffersWithToleranceRange1"
+                                    },
+                                    {
+                                      "value": "DiffersWithToleranceRange2"
+                                    },
+                                    {
+                                      "value": "DiffersWithToleranceRange5"
+                                    },
+                                    {
+                                      "value": "DiffersWithToleranceRange10"
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "4fa9ecf8923e43a21280508657abeae0",
+                      "name": "Descriptions",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "75bc996451b70860b9d442d8f410d843",
+                            "name": "Description_Internal",
+                            "annotations": [
+                              {
+                                "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                                "value": "language"
+                              }
+                            ],
+                            "Group": {
+                              "repeatability": 20,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "23c6f509b1dc993ba6e6b1c68cfbdb19",
+                                  "name": "language",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "LANGUAGE_TYPE_2"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "f78445346f3869e58e28fc22aacbad1c",
+                                  "name": "text",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "DESCRIPTION_TEXT_1"
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Group",
+                            "id": "b9120a5b264e85835566192e243bff69",
+                            "name": "Description_External",
+                            "annotations": [
+                              {
+                                "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                                "value": "language"
+                              }
+                            ],
+                            "Group": {
+                              "repeatability": 20,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "5512f7f0ec700ba5eab4eac2e51b79c6",
+                                  "name": "language",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "LANGUAGE_TYPE_2"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "286f93b2d4f5c2a9f360dd744cbc2a4f",
+                                  "name": "text",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "DESCRIPTION_TEXT_1"
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "1b887460c2f1a9a966dc669d2b258960",
+                      "name": "Annotations",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "e8fe0c0399f41d3a13ec8f17fd7d4be5",
+                            "name": "Annotation_list",
+                            "annotations": [
+                              {
+                                "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                                "value": "name"
+                              }
+                            ],
+                            "Group": {
+                              "repeatability": 100,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "a42aed4aa4af3958e2664d99ed09f4ab",
+                                  "name": "name",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "StringType"
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "name"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Name"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "59b94d6e8e00981b9f155e0fd8fd280c",
+                                  "name": "value",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "StringType"
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "value"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Wert"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

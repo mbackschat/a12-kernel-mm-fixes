@@ -1,0 +1,12 @@
+build/
+
+# Gradle
+.gradle/
+build-logic/.kotlin
+
+#Intellij
+**/.idea/
+*.iml
+
+bin/
+
