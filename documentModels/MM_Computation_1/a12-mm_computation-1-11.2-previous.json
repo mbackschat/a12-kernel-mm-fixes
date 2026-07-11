@@ -396,7 +396,7 @@
                             "Rule": {
                               "errorEntityRelPath": "../operation",
                               "errorCode": "OPERATION_MISSING",
-                              "errorCondition": "GroupFilled(RuleGroup)\nAnd FieldNotFilled(operation)\n",
+                              "errorCondition": "GroupFilled(RuleGroup)\nAnd FieldNotFilled(operation)",
                               "severity": "ERROR",
                               "errorMessage": [
                                 {
@@ -426,7 +426,7 @@
                             "Rule": {
                               "errorEntityRelPath": "../precondition",
                               "errorCode": "UI_GRAMMAR_ERROR_PRECONDITION",
-                              "errorCondition": "FieldFilled(precondition)\nAnd CustomCondition DMComputationPreconditionInvalid\n",
+                              "errorCondition": "FieldFilled(precondition)\nAnd CustomCondition DMComputationPreconditionInvalid",
                               "severity": "ERROR",
                               "errorMessage": [
                                 {
@@ -456,7 +456,7 @@
                             "Rule": {
                               "errorEntityRelPath": "../operation",
                               "errorCode": "UI_GRAMMAR_ERROR_CALCULATION",
-                              "errorCondition": "FieldFilled(operation)\nAnd CustomCondition DMComputationPreconditionInvalid\n",
+                              "errorCondition": "FieldFilled(operation)\nAnd CustomCondition DMComputationPreconditionInvalid",
                               "severity": "ERROR",
                               "errorMessage": [
                                 {
@@ -541,7 +541,7 @@
                                   "Rule": {
                                     "errorEntityRelPath": "../text",
                                     "errorCode": "LANGUAGE_MISSING",
-                                    "errorCondition": "FieldFilled(text)\nAnd FieldNotFilled(language)\n",
+                                    "errorCondition": "FieldFilled(text)\nAnd FieldNotFilled(language)",
                                     "severity": "ERROR",
                                     "errorMessage": [
                                       {
@@ -619,7 +619,7 @@
                                   "Rule": {
                                     "errorEntityRelPath": "../text",
                                     "errorCode": "LANGUAGE_MISSING",
-                                    "errorCondition": "FieldFilled(text)\nAnd FieldNotFilled(language)\n",
+                                    "errorCondition": "FieldFilled(text)\nAnd FieldNotFilled(language)",
                                     "severity": "ERROR",
                                     "errorMessage": [
                                       {
@@ -646,7 +646,7 @@
                             "Rule": {
                               "errorEntityRelPath": "../Description_Internal/language",
                               "errorCode": "LANGUAGE_DESCRIPTION_INT_DUPLICATE",
-                              "errorCondition": "RepetitionNotUnique(Description_Internal/language)\n",
+                              "errorCondition": "RepetitionNotUnique(Description_Internal/language)",
                               "severity": "ERROR",
                               "errorMessage": [
                                 {
@@ -670,7 +670,7 @@
                             "Rule": {
                               "errorEntityRelPath": "../Description_External/language",
                               "errorCode": "LANGUAGE_DESCRIPTION_EXT_DUPLICATE",
-                              "errorCondition": "RepetitionNotUnique(Description_External/language)\n",
+                              "errorCondition": "RepetitionNotUnique(Description_External/language)",
                               "severity": "ERROR",
                               "errorMessage": [
                                 {
@@ -769,7 +769,7 @@
                                   "Rule": {
                                     "errorEntityRelPath": "../name",
                                     "errorCode": "ANNOTATION_NAME_MISSING",
-                                    "errorCondition": "GroupFilled(RuleGroup)\nAnd FieldNotFilled(name)\n",
+                                    "errorCondition": "GroupFilled(RuleGroup)\nAnd FieldNotFilled(name)",
                                     "severity": "ERROR",
                                     "errorMessage": [
                                       {
@@ -796,7 +796,7 @@
                             "Rule": {
                               "errorEntityRelPath": "../Annotation_list/name",
                               "errorCode": "ANNOTATION_DUPLICATE",
-                              "errorCondition": "RepetitionNotUnique(Annotation_list/name)\n",
+                              "errorCondition": "RepetitionNotUnique(Annotation_list/name)",
                               "severity": "ERROR",
                               "errorMessage": [
                                 {
@@ -829,7 +829,7 @@
                       "Rule": {
                         "errorEntityRelPath": "../id",
                         "errorCode": "A12_ID_MISSING",
-                        "errorCondition": "FieldNotFilled(id)\n",
+                        "errorCondition": "FieldNotFilled(id)",
                         "severity": "ERROR",
                         "errorMessage": [
                           {
@@ -859,7 +859,7 @@
                       "Rule": {
                         "errorEntityRelPath": "../name",
                         "errorCode": "NAME_MISSING",
-                        "errorCondition": "FieldNotFilled(name)\n",
+                        "errorCondition": "FieldNotFilled(name)",
                         "severity": "ERROR",
                         "errorMessage": [
                           {
@@ -883,13 +883,13 @@
                       "externalDescription": [
                         {
                           "locale": "de_DE",
-                          "text": "A12 only\r\nThe rule prevents name conflicts with internally used rule names."
+                          "text": "A12 only\nThe rule prevents name conflicts with internally used rule names."
                         }
                       ],
                       "Rule": {
                         "errorEntityRelPath": "../name",
                         "errorCode": "NAME_INVALID_INTERNAL_NAME",
-                        "errorCondition": "FieldFilled(name)\nAnd [name] PatternMatched \"[vV][kK]_[vV][kK].*\"\n",
+                        "errorCondition": "FieldFilled(name)\nAnd [name] PatternMatched \"[vV][kK]_[vV][kK].*\"",
                         "severity": "ERROR",
                         "errorMessage": [
                           {
@@ -919,7 +919,7 @@
                       "Rule": {
                         "errorEntityRelPath": "../computedField",
                         "errorCode": "COMPUTED_FIELD_MISSING",
-                        "errorCondition": "FieldNotFilled(computedField)\n",
+                        "errorCondition": "FieldNotFilled(computedField)",
                         "severity": "ERROR",
                         "errorMessage": [
                           {
@@ -949,7 +949,7 @@
                       "Rule": {
                         "errorEntityRelPath": "../ComputationAlternatives/precondition",
                         "errorCode": "COMPUTATION_MISSING",
-                        "errorCondition": "NoGroupFilled(ComputationAlternatives*)\n",
+                        "errorCondition": "NoGroupFilled(ComputationAlternatives*)",
                         "severity": "ERROR",
                         "errorMessage": [
                           {
@@ -979,7 +979,7 @@
                       "Rule": {
                         "errorEntityRelPath": "../ComputationAlternatives/precondition",
                         "errorCode": "PRECONDITION_MISSING",
-                        "errorCondition": "NumberOfFilledGroups(ComputationAlternatives*) > 1\nAnd NumberOfFilledFields(ComputationAlternatives*/operation) ==\nNumberOfFilledGroups(ComputationAlternatives*)\nAnd NumberOfFilledFields(ComputationAlternatives*/operation) >\nNumberOfFilledFields(ComputationAlternatives*/precondition)\n",
+                        "errorCondition": "NumberOfFilledGroups(ComputationAlternatives*) > 1\nAnd NumberOfFilledFields(ComputationAlternatives*/operation) ==\nNumberOfFilledGroups(ComputationAlternatives*)\nAnd NumberOfFilledFields(ComputationAlternatives*/operation) >\nNumberOfFilledFields(ComputationAlternatives*/precondition)",
                         "severity": "ERROR",
                         "errorMessage": [
                           {
@@ -1009,7 +1009,7 @@
                       "Rule": {
                         "errorEntityRelPath": "../computedField",
                         "errorCode": "COMPUTED_FIELD_INVALID_REFERENCE",
-                        "errorCondition": "FieldFilled(computedField)\nAnd CustomCondition InvalidReference\n",
+                        "errorCondition": "FieldFilled(computedField)\nAnd CustomCondition InvalidReference",
                         "severity": "ERROR",
                         "errorMessage": [
                           {
@@ -1033,13 +1033,13 @@
                       "externalDescription": [
                         {
                           "locale": "de_DE",
-                          "text": "A12 only \r\nensures the name is not duplicated in the parent group"
+                          "text": "A12 only \nensures the name is not duplicated in the parent group"
                         }
                       ],
                       "Rule": {
                         "errorEntityRelPath": "../name",
                         "errorCode": "DUPLICATE_NAME_WITHIN_GROUP",
-                        "errorCondition": "FieldFilled(name)\nAnd CustomCondition DuplicateNameWithinGroup\n",
+                        "errorCondition": "FieldFilled(name)\nAnd CustomCondition DuplicateNameWithinGroup",
                         "severity": "ERROR",
                         "errorMessage": [
                           {
@@ -1069,7 +1069,7 @@
                       "Rule": {
                         "errorEntityRelPath": "../id",
                         "errorCode": "UI_GRAMMAR_ERROR",
-                        "errorCondition": "FieldFilled(id)\nAnd AtLeastOneGroupFilled(ComputationAlternatives*)\nAnd CustomCondition DMComputationInvalid\n",
+                        "errorCondition": "FieldFilled(id)\nAnd AtLeastOneGroupFilled(ComputationAlternatives*)\nAnd CustomCondition DMComputationInvalid",
                         "severity": "ERROR",
                         "errorMessage": [
                           {
@@ -1099,7 +1099,7 @@
                       "Rule": {
                         "errorEntityRelPath": "../commonPrecondition",
                         "errorCode": "UI_GRAMMAR_ERROR_COMMON_PRECONDITION",
-                        "errorCondition": "FieldFilled(commonPrecondition)\nAnd CustomCondition DMComputationPreconditionInvalid\n",
+                        "errorCondition": "FieldFilled(commonPrecondition)\nAnd CustomCondition DMComputationPreconditionInvalid",
                         "severity": "ERROR",
                         "errorMessage": [
                           {

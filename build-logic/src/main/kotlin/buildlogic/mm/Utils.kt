@@ -29,7 +29,8 @@ private fun internalReplaceGroupWithUnresolvedInclude(jsonRoot: JsonNode, groupA
     if (groupToReplace != null && groupToReplace is ObjectNode) {
         val groupObj = groupToReplace.path("Group") as? ObjectNode ?: return
         groupObj.remove("elements")
-        groupObj.put("modelAlias", dmIdForInclude)
+        val includeConfig = groupObj.putObject("includeConfig")
+        includeConfig.put("reference", dmIdForInclude)
     }
     val header = jsonRoot.path("header") as? ObjectNode ?: return
     val modelRefs: ArrayNode = if (header.has("modelReferences") && header.get("modelReferences").isArray) {
@@ -38,7 +39,6 @@ private fun internalReplaceGroupWithUnresolvedInclude(jsonRoot: JsonNode, groupA
         header.putArray("modelReferences")
     }
     val includeNode = header.objectNode()
-    includeNode.put("alias", dmIdForInclude)
     includeNode.put("reference", dmIdForInclude)
     includeNode.put("purpose", "include")
     includeNode.put("modelType", "document")
@@ -290,11 +290,9 @@ fun setFreshMmVersionInPropertiesFiles(rootDir: File, modelName: String, version
 }
 
 fun setFreshMmVersionInPropertiesFilesForAllDVsThatHaveAVersionSet(rootDir: File) {
-    val prevVersion = loadVersions(rootDir)
-    discoverModelVersionsFromDmFolders(rootDir)
-        .filter { dv -> prevVersion.contains(getKeyForVersionsFile(dv.first, dv.second)) }
-        .forEach { model_version ->
-            setFreshMmVersionInPropertiesFiles(rootDir, model_version.first, model_version.second)
+    discoverConfiguredModelVersions(rootDir)
+        .forEach { (modelName, version) ->
+            setFreshMmVersionInPropertiesFiles(rootDir, modelName, version)
     }
 }
 
@@ -380,6 +378,24 @@ fun discoverModelVersionsFromDmFolders(rootDir: File): List<Pair<String, String>
             "Folder $folder did not match expected pattern <modelName>_<version>"
         }
         folder.substring(0, splitIdx) to folder.substring(splitIdx + 1)
+    }
+}
+
+/**
+ * Returns (modelName, version) pairs that have DM folders on disk AND a
+ * corresponding version key in the versions properties files.
+ */
+fun discoverConfiguredModelVersions(rootDir: File): List<Pair<String, String>> {
+    val versionsKeys = loadVersions(rootDir).keys
+    return discoverModelVersionsFromDmFolders(rootDir).filter { (modelName, version) ->
+        val has = getKeyForVersionsFile(modelName, version) in versionsKeys
+        if (!has) {
+            println("WARNING: no version found for modelName=$modelName, version=$version " +
+                "in latestKernelMMVersions.properties, latestServerMMVersions.properties, " +
+                "latestEditorMMVersions.properties or latestSmeMMVersions.properties, " +
+                "skipping this (model, version) even though there is a corresponding folder ")
+        }
+        has
     }
 }
 

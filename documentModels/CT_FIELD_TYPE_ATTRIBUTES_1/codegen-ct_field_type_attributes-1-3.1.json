@@ -1,0 +1,1432 @@
+{
+  "header": {
+    "id": "CT_FIELD_TYPE_ATTRIBUTES_1",
+    "modelType": "document",
+    "modelVersion": "28.4.0",
+    "locales": [
+      {
+        "code": "de_DE"
+      },
+      {
+        "code": "en_US"
+      }
+    ],
+    "labels": [],
+    "annotations": [
+      {
+        "name": "A12_fieldsOnly",
+        "value": ""
+      },
+      {
+        "name": "A12_variants",
+        "value": "codegen,a12types"
+      }
+    ],
+    "modelReferences": []
+  },
+  "content": {
+    "modelInfo": {
+      "name": "CT_FIELD_TYPE_ATTRIBUTES_1",
+      "variant": "codegen",
+      "branch": "1",
+      "revision": "3.1",
+      "immutable": true
+    },
+    "modelConfig": {
+      "decimalSeparator": ".",
+      "timeZone": "Europe/Berlin",
+      "conditionLanguage": {
+        "code": "en_US"
+      }
+    },
+    "typeDefinitions": [
+      {
+        "id": "ABS_FIELD_NAME_ML_3",
+        "name": "ABS_FIELD_NAME_ML_3",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Kein korrekter Feldname."
+              },
+              {
+                "locale": "en_US",
+                "text": "Not a correct field name."
+              }
+            ],
+            "maxLength": 713,
+            "pattern": "/[a-zA-Z0-9_üöäÜÖÄß][/a-zA-Z0-9_üöäÜÖÄß]*/[a-zA-Z0-9_:]+([.][a-zA-Z][a-zA-Z0-9_:]*)*"
+          }
+        },
+        "revision": "3"
+      },
+      {
+        "id": "CONFIRM_1",
+        "name": "CONFIRM_1",
+        "fieldType": {
+          "type": "ConfirmType"
+        },
+        "revision": "1"
+      },
+      {
+        "id": "CUSTOM_TYPE_NAME_3",
+        "name": "CUSTOM_TYPE_NAME_3",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Der Name für einen vordefinierten Typ darf nur aus Buchstaben, Ziffern und Unterstrich bestehen."
+              },
+              {
+                "locale": "en_US",
+                "text": "The name of the custom field type may only contain letter, digits and underscore."
+              }
+            ],
+            "maxLength": 1024,
+            "pattern": "[a-zA-Z0-9_]*"
+          }
+        },
+        "revision": "3"
+      },
+      {
+        "id": "DATE_FORMAT_1",
+        "name": "DATE_FORMAT_1",
+        "fieldType": {
+          "type": "EnumerationType",
+          "EnumerationType": {
+            "values": [
+              {
+                "value": "DD.MM.YYYY",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "TT.MM.JJJJ"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "DD.MM.YYYY"
+                  }
+                ]
+              },
+              {
+                "value": "DD.MM.",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "TT.MM."
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "DD.MM."
+                  }
+                ]
+              },
+              {
+                "value": "MM",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "MM"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "MM"
+                  }
+                ]
+              },
+              {
+                "value": "YYYYMMDD",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JJJJMMTT"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YYYYMMDD"
+                  }
+                ]
+              },
+              {
+                "value": "YYYY-MM-DD",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JJJJ-MM-TT"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YYYY-MM-DD"
+                  }
+                ]
+              },
+              {
+                "value": "DDMM",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "TTMM"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "DDMM"
+                  }
+                ]
+              },
+              {
+                "value": "YYYY",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JJJJ"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YYYY"
+                  }
+                ]
+              },
+              {
+                "value": "MMDD",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "MMTT"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "MMDD"
+                  }
+                ]
+              },
+              {
+                "value": "YYYYMM",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JJJJMM"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YYYYMM"
+                  }
+                ]
+              },
+              {
+                "value": "YYYY-MM-DD'T'HH:mm:ss",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JJJJ-MM-TT'T'HH:mm:ss"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YYYYMMDD'T'HH:mm:ss"
+                  }
+                ]
+              },
+              {
+                "value": "HH:mm:ss",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "HH:mm:ss"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "HH:mm:ss"
+                  }
+                ]
+              },
+              {
+                "value": "YYYY-MM",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JJJJ-MM"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YYYY-MM"
+                  }
+                ]
+              },
+              {
+                "value": "MM-DD",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "MM-TT"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "MM-DD"
+                  }
+                ]
+              }
+            ],
+            "categories": [
+              {
+                "name": "containsYear",
+                "values": [
+                  "True",
+                  "False",
+                  "False",
+                  "True",
+                  "True",
+                  "False",
+                  "True",
+                  "False",
+                  "True",
+                  "True",
+                  "False",
+                  "True",
+                  "False"
+                ],
+                "description": "Whether or not the format contains the year part"
+              }
+            ],
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Das Datumsformat ist ungültig."
+              },
+              {
+                "locale": "en_US",
+                "text": "The date format is invalid."
+              }
+            ]
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "DATE_RANGE_FORMAT_1",
+        "name": "DATE_RANGE_FORMAT_1",
+        "fieldType": {
+          "type": "EnumerationType",
+          "EnumerationType": {
+            "values": [
+              {
+                "value": "MMMM",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "MMMM"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "MMMM"
+                  }
+                ]
+              },
+              {
+                "value": "YYYY/YYYY",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JJJJ/JJJJ"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YYYY/YYYY"
+                  }
+                ]
+              },
+              {
+                "value": "DD.MM-DD.MM",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "TT.MM-TT.MM"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "DD.MM-DD.MM"
+                  }
+                ]
+              },
+              {
+                "value": "DD.MM.YYYY-DD.MM.YYYY",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "TT.MM.JJJJ-TT.MM.JJJJ"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "DD.MM.YYYY-DD.MM.YYYY"
+                  }
+                ]
+              },
+              {
+                "value": "YYYY-MM-DD/YYYY-MM-DD",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JJJJ-MM-TT/JJJJ-MM-TT"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YYYY-MM-DD/YYYY-MM-DD"
+                  }
+                ]
+              },
+              {
+                "value": "MM/MM",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "MM/MM"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "MM/MM"
+                  }
+                ]
+              },
+              {
+                "value": "YYYY-MM/YYYY-MM",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JJJJ-MM/JJJJ-MM"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YYYY-MM/YYYY-MM"
+                  }
+                ]
+              },
+              {
+                "value": "MM-DD/MM-DD",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "MM-TT/MM-TT"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "MM-DD/MM-DD"
+                  }
+                ]
+              }
+            ],
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Das DatumBereich-Format ist ungültig."
+              },
+              {
+                "locale": "en_US",
+                "text": "The date range format is invalid."
+              }
+            ]
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "FALSE_VALUE_2",
+        "name": "FALSE_VALUE_2",
+        "fieldType": {
+          "type": "EnumerationType",
+          "EnumerationType": {
+            "values": [
+              {
+                "value": "0"
+              },
+              {
+                "value": "2"
+              },
+              {
+                "value": "false"
+              }
+            ],
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Der Nein-Wert ist ungültig."
+              },
+              {
+                "locale": "en_US",
+                "text": "The no-value is invalid."
+              }
+            ]
+          }
+        },
+        "revision": "2"
+      },
+      {
+        "id": "INTERPRETATION_OF_YEAR_2",
+        "name": "INTERPRETATION_OF_YEAR_2",
+        "fieldType": {
+          "type": "EnumerationType",
+          "EnumerationType": {
+            "values": [
+              {
+                "value": "standard",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Standard"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "Standard"
+                  }
+                ]
+              },
+              {
+                "value": "from",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "(von ist Referenzjahr)"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "(from is base year)"
+                  }
+                ]
+              },
+              {
+                "value": "to",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "(bis ist Referenzjahr)"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "(to is base year)"
+                  }
+                ]
+              }
+            ],
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Interner Fehler: ungültiger Wert."
+              },
+              {
+                "locale": "en_US",
+                "text": "Internal error: invalid value."
+              }
+            ]
+          }
+        },
+        "revision": "2"
+      },
+      {
+        "id": "MIN_MAX_FRACTIONAL_DIGITS_1",
+        "name": "MIN_MAX_FRACTIONAL_DIGITS_1",
+        "fieldType": {
+          "type": "NumberType",
+          "NumberType": {
+            "positivesOnly": true,
+            "maxValue": 14
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "MIN_MAX_LENGTH_1",
+        "name": "MIN_MAX_LENGTH_1",
+        "fieldType": {
+          "type": "NumberType",
+          "NumberType": {
+            "zeroNotAllowed": true,
+            "positivesOnly": true,
+            "minValue": 1,
+            "maxValue": 99999
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "MIN_MAX_VALUE_1",
+        "name": "MIN_MAX_VALUE_1",
+        "fieldType": {
+          "type": "NumberType",
+          "NumberType": {
+            "maxFractionalDigits": 14
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "OPTIONAL_DATE_TYPE_1",
+        "name": "OPTIONAL_DATE_TYPE_1",
+        "fieldType": {
+          "type": "EnumerationType",
+          "EnumerationType": {
+            "values": [
+              {
+                "value": "FULL",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "BEKANNT"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "FULL"
+                  }
+                ]
+              },
+              {
+                "value": "DAY_OPTIONAL",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "TAG_OPTIONAL"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "DAY_OPTIONAL"
+                  }
+                ]
+              },
+              {
+                "value": "MONTH_OPTIONAL",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "MONAT_OPTIONAL"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "MONTH_OPTIONAL"
+                  }
+                ]
+              },
+              {
+                "value": "YEAR_OPTIONAL",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JAHR_OPTIONAL"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "YEAR_OPTIONAL"
+                  }
+                ]
+              }
+            ],
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Es darf nur 'TAG_OPTIONAL' (DAY_OPTIONAL) , 'MONAT_OPTIONAL' (MONTH_OPTIONAL), 'JAHR_OPTIONAL' (YEAR_OPTIONAL) oder 'BEKANNT' (KNOWN) angegeben werden."
+              },
+              {
+                "locale": "en_US",
+                "text": "Only the values 'DAY_OPTIONAL' , 'MONTH_OPTIONAL', 'YEAR_OPTIONAL' or 'KNOWN' are valid."
+              }
+            ]
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "PREDECIMAL_PLACES_1",
+        "name": "PREDECIMAL_PLACES_1",
+        "fieldType": {
+          "type": "NumberType",
+          "NumberType": {
+            "zeroNotAllowed": true,
+            "positivesOnly": true,
+            "minValue": 1,
+            "maxValue": 15
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "REGEX_TYPE_1",
+        "name": "REGEX_TYPE_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "maxLength": 1000
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "TRUE_VALUE_2",
+        "name": "TRUE_VALUE_2",
+        "fieldType": {
+          "type": "EnumerationType",
+          "EnumerationType": {
+            "values": [
+              {
+                "value": "1"
+              },
+              {
+                "value": "2"
+              },
+              {
+                "value": "X"
+              },
+              {
+                "value": "true"
+              },
+              {
+                "value": "yes"
+              }
+            ],
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Der Ja-Wert ist ungültig."
+              },
+              {
+                "locale": "en_US",
+                "text": "The yes-value is invalid."
+              }
+            ]
+          }
+        },
+        "revision": "2"
+      }
+    ],
+    "modelRoot": {
+      "rootGroups": [
+        {
+          "type": "Group",
+          "id": "f76c709095e91294161cdec441d833e2",
+          "name": "Data",
+          "Group": {
+            "repeatability": 1,
+            "elements": [
+              {
+                "type": "Field",
+                "id": "d083fd765a794885fad82095ce4baebf",
+                "name": "name",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "name of the field\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "ABS_FIELD_NAME_ML_3"
+                    }
+                  },
+                  "requirednessConfig": {
+                    "mode": "relativeToParent"
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "31215054d628816442ea28b0c4627c7",
+                "name": "type",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "type of the field - field is required.\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "EnumerationType",
+                    "EnumerationType": {
+                      "values": [
+                        {
+                          "value": "String",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "String"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "String"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "Number",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "Zahl"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Number"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "GeldBetragMitCent",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "GeldBetragMitCent"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "AmountWithCent"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "GeldBetragOhneCent",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "GeldBetragOhneCent"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "AmountWithoutCent"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "Date",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "Datum"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Date"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "DateTime",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "Datum und Zeit"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Date Time"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "Time",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "Zeit"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Time"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "DateFragment",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "Datumsfragment"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Date Fragment"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "DateRange",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "DatumBereich"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Date Range"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "Confirm",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "Ja"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Confirm"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "Boolean",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "JaNein"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Boolean"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "CustomFieldType",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "Vordefiniert"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Custom"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "Enumeration",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "Enumeration"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "Enumeration"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "ExtensibleEnumeration",
+                          "label": [
+                            {
+                              "locale": "de_DE",
+                              "text": "NichtAbgeschlosseneEnumeration"
+                            },
+                            {
+                              "locale": "en_US",
+                              "text": "ExtensibleEnumeration"
+                            }
+                          ]
+                        }
+                      ],
+                      "categories": [
+                        {
+                          "name": "superType",
+                          "values": [
+                            "String",
+                            "Number",
+                            "Number",
+                            "Number",
+                            "Date",
+                            "Date",
+                            "Date",
+                            "Date",
+                            "DateRange",
+                            "Boolean",
+                            "Boolean",
+                            "String",
+                            "String",
+                            "String"
+                          ],
+                          "description": "some types belong to a common super type"
+                        },
+                        {
+                          "name": "typeRestrictionPolicy",
+                          "values": [
+                            "target_same_supertype",
+                            "target_same_supertype_or_string",
+                            "target_same_type_or_number",
+                            "target_same_supertype",
+                            "same_type",
+                            "same_type",
+                            "same_type",
+                            "same_type",
+                            "same_type",
+                            "same_type",
+                            "same_type",
+                            "target_is_same_type_or_string_or_nae",
+                            "target_is_same_type_or_string_or_nae",
+                            "target_is_same_type_or_string_or_enum"
+                          ],
+                          "description": "specifies the policy of how to check if type can be mapped to target type"
+                        },
+                        {
+                          "name": "GermanErrorTextFragment",
+                          "values": [
+                            "String, Enumeration, NichtAbgeschlosseneEnumeration oder Vordefinierter Feldtyp",
+                            "Zahl, GeldBetragMitCent, GeldBetragOhneCent oder String",
+                            "GeldBetragMitCent oder Zahl",
+                            "GeldBetragOhneCent, GeldBetragMitCent oder Zahl",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "Vordefinierter Feldtyp, NichtAbgeschlosseneEnumeration oder String",
+                            "Enumeration, NichtAbgeschlosseneEnumeration oder String",
+                            "NichtAbgeschlosseneEnumeration, Enumeration oder String"
+                          ],
+                          "description": "allows for generic error messages"
+                        },
+                        {
+                          "name": "EnglishErrorTextFragment",
+                          "values": [
+                            "String, Enumeration or CustomFieldType",
+                            "Number or String",
+                            "Number",
+                            "Number",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "n.a.",
+                            "CustomFieldType or String",
+                            "Enumeration or String",
+                            "Enumeration or String"
+                          ],
+                          "description": "allows for generic error messages"
+                        }
+                      ],
+                      "errorMessage": [
+                        {
+                          "locale": "de_DE",
+                          "text": "Dieser Feldtyp wird nicht unterstützt."
+                        },
+                        {
+                          "locale": "en_US",
+                          "text": "Unsupported field type."
+                        }
+                      ]
+                    }
+                  },
+                  "requirednessConfig": {
+                    "mode": "relativeToParent"
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "9f0ee28917175264e2e6dfde252f2e6f",
+                "name": "noValueValidation",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "set if the value of this string should be validated - used for attachments\ndefault is false\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "CONFIRM_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "dfd480ee726f289e9ce04245aafcdc17",
+                "name": "linebreaksPermitted",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "set if line breaks are permitted\ndefault is false\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "CONFIRM_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "f3801014bf6d0e49a7c98d5b40b13ffb",
+                "name": "pattern",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "regular expression which is used for validation\nplease note: the pattern should not start resp. end with ‚^‘ resp. ‚$. the pattern should not start or end with a blank.\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "REGEX_TYPE_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "dd324335653c985d6137e779cb3dbade",
+                "name": "minLength",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "minimal length of the string value - optional attribute\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "MIN_MAX_LENGTH_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "4801c5d9358577a76964cbd6fc0064c7",
+                "name": "maxLength",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "maximum length of the string value - optional attribute\nFor fields with \"no value validation\" set to true, the maximum length is specified in MiB, but not checked by the validation kernel. (used only for documentation).\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "MIN_MAX_LENGTH_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "a1fd5b7484b23f4c05ff1aa2dc71b262",
+                "name": "predecimalPlaces",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "max number of digits before the decimal separator. optional\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "PREDECIMAL_PLACES_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "a1df226c5ed08a5299013fe132d0f8f1",
+                "name": "minFractionalDigits",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "minimum number of required digits after the decimal separator.\nFor C++ fractional digits have to be < 7\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "MIN_MAX_FRACTIONAL_DIGITS_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "71f52b23e07709f28b02730527e7675a",
+                "name": "maxFractionalDigits",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "maximum number of allowed digits after the decimal separator. \nFor C++ max fractional digits have to be < 7\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "MIN_MAX_FRACTIONAL_DIGITS_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "1d7c5568d6cecf0f87b962403f96275b",
+                "name": "minimalValue",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "minimum value of this number – please note: if a decimal separator is required, a . (dot) has to be used\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "MIN_MAX_VALUE_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "94832b32a7426b27ff8d588ef0e938c4",
+                "name": "maximalValue",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "maximum value of this number – please note: if a decimal separator is required, a . (dot) has to be used.\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "MIN_MAX_VALUE_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "cb7064dbc13b504d19339034479ac7a7",
+                "name": "zeroAllowed",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "true if zero is a valid value for this number\ndefault is true\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "CONFIRM_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "41c0ef78bb5bc31ef13bddf85d709cce",
+                "name": "leadingZerosAllowed",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "set if leading zeros are allowed\ndefault is false\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "CONFIRM_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "5933d1761077981783be24ca66c772",
+                "name": "positivesOnly",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "true if only positive values are valid for this number\ndefault is true\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "CONFIRM_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "4fb63bb2438554a63ed5c3f54715005f",
+                "name": "optionalDateType",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "specifies the kind of the optional date type:\n- only the day-fragment may be optional (DAY_OPTIONAL)\n- only the day and month-fragment may be optional (MONTH_OPTIONAL)\n- all fragments are optional (YEAR_OPTIONAL)\nPlease note: If a date fragment is specified as \"00\", all date fragments which are more specific have to be specified with \"00\" as well. E.g. if you specify 00 for the month-fragment, you have to specify 00 for day-fragment as well. Thus e.g. 00.12.0000 is never valid. 00.00.2020 is valid, if it is a optional date type.\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "OPTIONAL_DATE_TYPE_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "fbd6a18ec18fa93fffccb1ad7c9083ed",
+                "name": "dateRangeFormat",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Format for date ranges\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "DATE_RANGE_FORMAT_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "1d2808dca7778351f6aaaaf10fa2fc3e",
+                "name": "dateFormat",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Format of the date in string format. Mandatory.\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "DATE_FORMAT_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "e3d91c456e77a3cf36aff81eb45559f8",
+                "name": "interpretationOfYear",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Interpretation of year for the special date ranges which specify the date without the year\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "INTERPRETATION_OF_YEAR_2"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "d7fe4f4ef6589bad7b9cf1c0c79d8e3",
+                "name": "younger1900",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Set to true if only dates >= 1.1.1900 are valid. Default: true\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "CONFIRM_1"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "8bedf8aa3c4063a37f9ca91ff0fc9250",
+                "name": "trueValue",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Value representing \"true\". ConfirmType allows \"1\", \"2\", \"X\", \"true\" und \"yes\". BooleanType allows 1/0, 1/2 and true/false.\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "TRUE_VALUE_2"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "dc38740e81ad9c2746bfc5495684a",
+                "name": "falseValue",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "specifies the value for false.\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "FALSE_VALUE_2"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "a75d0ecf96ca328f400cfd211cf68875",
+                "name": "codeName",
+                "internalDescription": [
+                  {
+                    "locale": "de_DE",
+                    "text": "name of the custom type\n(technical name)\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "CUSTOM_TYPE_NAME_3"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

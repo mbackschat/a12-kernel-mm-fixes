@@ -44,7 +44,7 @@ val generateTypingsTask = tasks.register<JavaExec>("generateTypings") {
         "--document-model-file", dmAfterRecreateIncludesPath.absolutePath,
         "--package-prefix", cfg.packagePrefix(),
         "--output-dir", genSrcRoot.absolutePath,
-        "--annotations-fqns", "com.mgmtp.a12.model.utils.Experimental",
+        "--annotations-fqns", "com.mgmtp.a12.model.utils.OnlyForUsage",
     ) + if (cfg.externalIncludes.isNotEmpty())
             listOf("--external-models") + cfg.externalIncludes.map { it.externalModelsSpec }
         else listOf()
@@ -69,7 +69,9 @@ dependencies {
         add("api", project(extInclude.depProjPath)) // api because the included (e.g. header) classes occur in signatures
     }
     compileOnly("com.mgmtp.a12.base:base-model-utils:$baseModelUtilsVersion") // for annotations like @Experimental
-    typingsGenerator("com.mgmtp.a12.kernel:kernel-md-typed-accessor-gen:$currentKernelVersion")
+    // [A12K-3960] TODO switch back to regular $currentKernelVersion after the 31.0.0 release. Until then, we need to generate the typings with a non-release 31.x version in order to already include changes to the generatde classes like capitalization of enum class names
+    typingsGenerator("com.mgmtp.a12.kernel:kernel-md-typed-accessor-gen:31.0.0-pre.3")
+    //typingsGenerator("com.mgmtp.a12.kernel:kernel-md-typed-accessor-gen:$currentKernelVersion")
 }
 
 evaluationDependsOn(":test-mmtypings") // not sure if we strictly need this evaluationDependsOn dependency

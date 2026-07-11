@@ -1,0 +1,488 @@
+{
+  "header": {
+    "id": "CT_SELECTION_V1",
+    "modelType": "document",
+    "modelVersion": "28.3.0",
+    "locales": [
+      {
+        "code": "en_US"
+      },
+      {
+        "code": "de_DE"
+      }
+    ],
+    "labels": [],
+    "annotations": [
+      {
+        "name": "A12_fieldsOnly",
+        "value": ""
+      },
+      {
+        "name": "A12_variants",
+        "value": "a12,codegen,a12types"
+      }
+    ],
+    "modelReferences": []
+  },
+  "content": {
+    "modelInfo": {
+      "name": "CT_SELECTION_V1",
+      "variant": "codegen",
+      "branch": "V1",
+      "revision": "2.7",
+      "immutable": true
+    },
+    "modelConfig": {
+      "supportedCharacters": [
+        " -~",
+        "¡-£",
+        "¥",
+        "§",
+        "ª-¬",
+        "®-³",
+        "µ",
+        "¹-»",
+        "¿-ÿ",
+        "Œ-œ",
+        "Š-š",
+        "Ÿ",
+        "Ž-ž",
+        "€"
+      ],
+      "decimalSeparator": ",",
+      "timeZone": "Europe/Berlin",
+      "conditionLanguage": {
+        "code": "en_US"
+      }
+    },
+    "typeDefinitions": [
+      {
+        "id": "REFERENCE_1",
+        "name": "REFERENCE_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "maxLength": 714
+          }
+        },
+        "revision": "1"
+      }
+    ],
+    "modelRoot": {
+      "rootGroups": [
+        {
+          "type": "Group",
+          "id": "f6119e4926a3aad5ce5430126ee3cce1",
+          "name": "Selection",
+          "Group": {
+            "repeatability": 1,
+            "elements": [
+              {
+                "type": "Field",
+                "id": "884ebd49fce89fd8ef192a6d24bb6485",
+                "name": "Default",
+                "internalDescription": [
+                  {
+                    "locale": "en_US",
+                    "text": "specifies the default for all entities which do not match a path specification in selected or unselected.\nMandatory field, but this is specified by a rule to get a nice error message.\n\n####"
+                  }
+                ],
+                "Field": {
+                  "fieldType": {
+                    "type": "EnumerationType",
+                    "EnumerationType": {
+                      "values": [
+                        {
+                          "value": "Selected",
+                          "label": [
+                            {
+                              "locale": "en_US",
+                              "text": "Selected"
+                            },
+                            {
+                              "locale": "de_DE",
+                              "text": "Selektiert"
+                            }
+                          ]
+                        },
+                        {
+                          "value": "Unselected",
+                          "label": [
+                            {
+                              "locale": "en_US",
+                              "text": "Unselected"
+                            },
+                            {
+                              "locale": "de_DE",
+                              "text": "Nicht-Selektiert"
+                            }
+                          ]
+                        }
+                      ],
+                      "errorMessage": [
+                        {
+                          "locale": "en_US",
+                          "text": "Only the values 'Selected' or 'Unselected' are valid."
+                        },
+                        {
+                          "locale": "de_DE",
+                          "text": "Es sind nur die Werte 'Selektiert' (Selected) und Nicht-Selektiert (Unselected) zulässig."
+                        }
+                      ]
+                    }
+                  },
+                  "label": [
+                    {
+                      "locale": "en_US",
+                      "text": "Default"
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Default"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Group",
+                "id": "926932f55412dcf708cf3180434706a7",
+                "name": "Selected",
+                "Group": {
+                  "repeatability": 1000000,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "acf8567c4f01d88d8668f8e5e88d8fb2",
+                      "name": "path",
+                      "annotations": [
+                        {
+                          "name": "AutoCompleteProps",
+                          "value": "allowAddingNewItems"
+                        }
+                      ],
+                      "internalDescription": [
+                        {
+                          "locale": "en_US",
+                          "text": "path specification for selected entities\n\n####"
+                        }
+                      ],
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "REFERENCE_1"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Path Specification for Selected Entities"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Pfad-Spezifikation für selektierte Entitäten"
+                          }
+                        ],
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "426c5f72fe506a68fa75e4b42442f68c",
+                      "name": "ONLY_WILDCARD",
+                      "Rule": {
+                        "errorEntityRelPath": "../path",
+                        "errorCode": "ONLY_WILDCARD",
+                        "errorCondition": "[path] == \"/*/\"",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "A single '/*/' is not a valid Path Specification."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Die Pfadspezifikation darf nicht nur aus einem Stern bestehen."
+                          }
+                        ],
+                        "guiPatterns": {
+                          "dynamicEnumeration": "false"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "a7e1aa8895034fa74c0ca6e6f6d39d5b",
+                      "name": "INVALID_PATTERN",
+                      "Rule": {
+                        "errorEntityRelPath": "../path",
+                        "errorCode": "INVALID_PATTERN",
+                        "errorCondition": "FieldFilled(path)\nAnd [path] PatternViolated\n\"/(([a-zA-Z0-9_üöäÜÖÄß]{1,60}/)+|\\*/)((([a-zA-Z0-9_])+[*]{0,1}|\\*([a-zA-Z0-9_])+))?\"",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "Invalid Path Specification."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Unzulässige Pfadspezifikation."
+                          }
+                        ],
+                        "guiPatterns": {
+                          "dynamicEnumeration": "false"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Group",
+                "id": "3fdf9513793124fd8567ba9e13aed9ee",
+                "name": "Unselected",
+                "Group": {
+                  "repeatability": 1000000,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "140ade346b20c858513d4d77438a4ee0",
+                      "name": "path",
+                      "annotations": [
+                        {
+                          "name": "AutoCompleteProps",
+                          "value": "allowAddingNewItems"
+                        }
+                      ],
+                      "internalDescription": [
+                        {
+                          "locale": "en_US",
+                          "text": "path specification for unselected entities\n\n####"
+                        }
+                      ],
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "REFERENCE_1"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Path Specification for Unselected Entities"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Pfad-Spezifikation für nicht-selektierte Entitäten"
+                          }
+                        ],
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "977b84b91fd56cfefbf468f46d74f42f",
+                      "name": "ONLY_WILDCARD",
+                      "Rule": {
+                        "errorEntityRelPath": "../path",
+                        "errorCode": "ONLY_WILDCARD",
+                        "errorCondition": "[path] == \"/*/\"",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "A single '/*/' is not a valid Path Specification."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Die Pfadspezifikation darf nicht nur aus einem Stern bestehen."
+                          }
+                        ],
+                        "guiPatterns": {
+                          "dynamicEnumeration": "false"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "289aeefcaa41b24f2a4fc44d0068151",
+                      "name": "INVALID_PATTERN",
+                      "Rule": {
+                        "errorEntityRelPath": "../path",
+                        "errorCode": "INVALID_PATTERN",
+                        "errorCondition": "FieldFilled(path)\nAnd [path] PatternViolated\n\"/(([a-zA-Z0-9_üöäÜÖÄß]{1,60}/)+|\\*/)((([a-zA-Z0-9_])+[*]{0,1}|\\*([a-zA-Z0-9_])+))?\"",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "Invalid Path Specification."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Unzulässige Pfadspezifikation."
+                          }
+                        ],
+                        "guiPatterns": {
+                          "dynamicEnumeration": "false"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Rule",
+                "id": "db92f694e33e45e30381c18fb0bda19b",
+                "name": "SELECTED_DUPLICATE",
+                "Rule": {
+                  "errorEntityRelPath": "../Selected/path",
+                  "errorCode": "SELECTED_DUPLICATE",
+                  "errorCondition": "RepetitionNotUnique(Selected/path)",
+                  "severity": "ERROR",
+                  "errorMessage": [
+                    {
+                      "locale": "en_US",
+                      "text": "The Path Specification '$Selected/path.value$' is given multiple times."
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Der Wert '$Selected/path.value$' wurde mehrfach eingegeben."
+                    }
+                  ],
+                  "guiPatterns": {
+                    "dynamicEnumeration": "false"
+                  }
+                }
+              },
+              {
+                "type": "Rule",
+                "id": "e898f9d256f4d4cf9436b3ca32a56ce4",
+                "name": "UNSELECTED_DUPLICATE",
+                "Rule": {
+                  "errorEntityRelPath": "../Unselected/path",
+                  "errorCode": "UNSELECTED_DUPLICATE",
+                  "errorCondition": "RepetitionNotUnique(Unselected/path)",
+                  "severity": "ERROR",
+                  "errorMessage": [
+                    {
+                      "locale": "en_US",
+                      "text": "The Path Specification '$Unselected/path.value$' is given multiple times."
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Der Wert '$Unselected/path.value$' wurde mehrfach eingegeben."
+                    }
+                  ],
+                  "guiPatterns": {
+                    "dynamicEnumeration": "false"
+                  }
+                }
+              },
+              {
+                "type": "Rule",
+                "id": "a76a4f108d72b5456dc327a3e1b1a66a",
+                "name": "DEFAULT_MISSING",
+                "Rule": {
+                  "errorEntityRelPath": "../Default",
+                  "errorCode": "DEFAULT_MISSING",
+                  "errorCondition": "FieldNotFilled(Default)",
+                  "severity": "ERROR",
+                  "errorMessage": [
+                    {
+                      "locale": "en_US",
+                      "text": "It must be specified whether the elements of the Reference Model are selected or unselected by default."
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Es muss angegeben werden, ob standardmäßig selektiert oder nicht-selektiert spezifiziert ist. Diese Angabe wird verwendet, wenn unter selektiert bzw. nicht-selektiert keine passende Pfadangabe spezifiziert ist."
+                    }
+                  ],
+                  "guiPatterns": {
+                    "dynamicEnumeration": "false"
+                  }
+                }
+              },
+              {
+                "type": "Rule",
+                "id": "24db029ddf2945d7290d7197331124bf",
+                "name": "DEFAULT_SELECTED_BUT_NO_UNSELECTED",
+                "Rule": {
+                  "errorEntityRelPath": "../Default",
+                  "errorCode": "DEFAULT_SELECTED_BUT_NO_UNSELECTED",
+                  "errorCondition": "[Default] == \"Selected\"\nAnd NoGroupFilled(Unselected*)\nAnd AtLeastOneGroupFilled(Selected*)",
+                  "severity": "ERROR",
+                  "errorMessage": [
+                    {
+                      "locale": "en_US",
+                      "text": "'Selected' is used as Default. If no Path Specification is entered for Unselected then a Path Specification in Selected is not sensible."
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Als Default wurde 'Selektiert' (Selected) gewählt. Wenn keine Einträge zu Unselektiert spezifiziert sind, dürfen auch keine Einträge zu Selektiert spezifiziert sein, weil dies bereits durch den Default abgedeckt ist."
+                    }
+                  ],
+                  "guiPatterns": {
+                    "dynamicEnumeration": "false"
+                  }
+                }
+              },
+              {
+                "type": "Rule",
+                "id": "c1a90aa5b4e9fd51b5e4e629ba6a83dc",
+                "name": "DEFAULT_UNSELECTED_BUT_NO_SELECTED",
+                "Rule": {
+                  "errorEntityRelPath": "../Default",
+                  "errorCode": "DEFAULT_UNSELECTED_BUT_NO_SELECTED",
+                  "errorCondition": "[Default] == \"Unselected\"\nAnd NoGroupFilled(Selected*)\nAnd AtLeastOneGroupFilled(Unselected*)",
+                  "severity": "ERROR",
+                  "errorMessage": [
+                    {
+                      "locale": "en_US",
+                      "text": "'Unselected' is used as Default. If no Path Specification is entered for Selected then a Path Specification in Unselected is not sensible."
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Als Default wurde 'Unselektiert' (Unselected) gewählt. Wenn keine Einträge zu Selektiert spezifiziert sind, dürfen auch keine Einträge zu Unselektiert spezifiziert sein, weil dies bereits durch den Default abgedeckt ist."
+                    }
+                  ],
+                  "guiPatterns": {
+                    "dynamicEnumeration": "false"
+                  }
+                }
+              },
+              {
+                "type": "Rule",
+                "id": "6178ff4e0fb019882e4f5cea95e74a43",
+                "name": "SELECTED_IN_UNSELECTED",
+                "Rule": {
+                  "errorEntityRelPath": "../Selected/path",
+                  "errorCode": "SELECTED_IN_UNSELECTED",
+                  "errorCondition": "AtLeastOneFieldValueIncludedInValueList(Selected/path In Unselected*/path)",
+                  "severity": "ERROR",
+                  "errorMessage": [
+                    {
+                      "locale": "en_US",
+                      "text": "The Path Specifictation '$Selected/path.value$' is given in Selected and Unselected."
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Der Wert '$Selected/path.value$' wurde sowohl bei Selektiert als auch bei Nicht-Selektiert angegeben."
+                    }
+                  ],
+                  "guiPatterns": {
+                    "dynamicEnumeration": "false"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

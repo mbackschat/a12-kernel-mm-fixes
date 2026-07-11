@@ -1,0 +1,1186 @@
+{
+  "header": {
+    "id": "MM_Group_1",
+    "modelType": "document",
+    "modelVersion": "28.4.0",
+    "locales": [
+      {
+        "code": "de_DE"
+      },
+      {
+        "code": "en_US"
+      }
+    ],
+    "labels": [],
+    "annotations": [
+      {
+        "name": "A12_fieldsOnly",
+        "value": ""
+      },
+      {
+        "name": "A12_variants",
+        "value": "a12"
+      },
+      {
+        "name": "_mgmtp.a12.kernel.BULK_MODEL",
+        "value": ""
+      }
+    ],
+    "modelReferences": []
+  },
+  "content": {
+    "modelInfo": {
+      "name": "MM_Group_1",
+      "variant": "none",
+      "branch": "1",
+      "revision": "13.1",
+      "immutable": true
+    },
+    "modelConfig": {
+      "decimalSeparator": ".",
+      "timeZone": "Europe/Berlin",
+      "conditionLanguage": {
+        "code": "en_US"
+      }
+    },
+    "typeDefinitions": [
+      {
+        "id": "ABS_GROUP_PATH_ML_9",
+        "name": "ABS_GROUP_PATH_ML_9",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "$field.value$: Kontext- bzw. Vordrucknamen dürfen nur aus Buchstaben, Ziffern oder Unterstrichen bestehen. Kontextnamen müssen mit einem Buchstaben beginnen. Namensteile dürfen nicht länger als 60 Zeichen sein und werden mit Slashes voneinander getrennt. Ein absoluter Kontextname muss mit einem Slash beginnen."
+              },
+              {
+                "locale": "en_US",
+                "text": "$field.value$: A group name may only contain letters, numbers or underscores. Group names must begin with a letter or an underscore. Name parts may not be longer than 60 characters and are separated by slashes. An absolute group name must begin with a slash."
+              }
+            ],
+            "maxLength": 613,
+            "pattern": "/[a-zA-Z0-9_üöäÜÖÄß]{1,60}(/[a-zA-Z_][a-zA-Z0-9_üöäÜÖÄß]{0,59})*"
+          }
+        },
+        "revision": "9"
+      },
+      {
+        "id": "BOOLEAN_1",
+        "name": "BOOLEAN_1",
+        "fieldType": {
+          "type": "BooleanType"
+        },
+        "revision": "1"
+      },
+      {
+        "id": "CONFIRM_1",
+        "name": "CONFIRM_1",
+        "fieldType": {
+          "type": "ConfirmType"
+        },
+        "revision": "1"
+      },
+      {
+        "id": "DESCRIPTION_TEXT_1",
+        "name": "DESCRIPTION_TEXT_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "lineBreaksPermitted": true,
+            "maxLength": 99999
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "ENTITY_ID_1",
+        "name": "ENTITY_ID_1",
+        "fieldType": {
+          "type": "NumberType",
+          "NumberType": {
+            "zeroNotAllowed": true,
+            "positivesOnly": true
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "FIELD_NAME_TRANSLATED_7",
+        "name": "FIELD_NAME_TRANSLATED_7",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "$field.value$: Feldnamen dürfen nur aus Buchstaben ohne Umlaute und Sonderzeichen, Ziffern oder Unterstrichen bestehen."
+              },
+              {
+                "locale": "en_US",
+                "text": "$field.value$: A field name may only contain letters, digits or underscores. Field names must not begin with a digit."
+              }
+            ],
+            "maxLength": 200,
+            "pattern": "[a-zA-Z0-9_:]+([.][a-zA-Z][a-zA-Z0-9_:]*)*"
+          }
+        },
+        "revision": "7"
+      },
+      {
+        "id": "GROUP_NAME_3",
+        "name": "GROUP_NAME_3",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "$field.value$: Kontextnamen dürfen nur aus Buchstaben, Ziffern oder Unterstrichen bestehen. Kontextnamen müssen mit einem Buchstaben beginnen."
+              },
+              {
+                "locale": "en_US",
+                "text": "$field.value$: A group name may only contain letters, numbers or underscores. Group names must begin with a letter or an underscore."
+              }
+            ],
+            "maxLength": 60,
+            "pattern": "[a-zA-Z_][a-zA-Z0-9_üöäÜÖÄß]*"
+          }
+        },
+        "revision": "3"
+      },
+      {
+        "id": "LANGUAGE_TYPE_2",
+        "name": "LANGUAGE_TYPE_2",
+        "fieldType": {
+          "type": "StringType"
+        },
+        "revision": "2"
+      },
+      {
+        "id": "PROGRAMMING_LANGUAGE_2",
+        "name": "PROGRAMMING_LANGUAGE_2",
+        "fieldType": {
+          "type": "EnumerationType",
+          "EnumerationType": {
+            "values": [
+              {
+                "value": "JAVA",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Java"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "Java"
+                  }
+                ]
+              },
+              {
+                "value": "CPLUS",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "C++"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "C++"
+                  }
+                ]
+              },
+              {
+                "value": "JAVA_SCRIPT_REDUCED",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JavaScript"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "JavaScript"
+                  }
+                ]
+              },
+              {
+                "value": "VBA",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Visual Basic for Applications"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "Visual Basic for Applications"
+                  }
+                ]
+              },
+              {
+                "value": "JAVA_SCRIPT_VK",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "JavaScript (Full)"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "JavaScript (Full)"
+                  }
+                ]
+              },
+              {
+                "value": "GROOVY",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Groovy"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "Groovy"
+                  }
+                ]
+              }
+            ],
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Die Programmiersprache wird nicht unterstützt."
+              },
+              {
+                "locale": "en_US",
+                "text": "The programming language is not supported."
+              }
+            ]
+          }
+        },
+        "revision": "2"
+      },
+      {
+        "id": "REFERENCE_1",
+        "name": "REFERENCE_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "maxLength": 714
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "SORT_TYPE_5",
+        "name": "SORT_TYPE_5",
+        "fieldType": {
+          "type": "EnumerationType",
+          "EnumerationType": {
+            "values": [
+              {
+                "value": "Ascending",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Aufsteigend"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "Ascending"
+                  }
+                ]
+              },
+              {
+                "value": "Descending",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Absteigend"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "Descending"
+                  }
+                ]
+              }
+            ],
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Sortierart: Es dürfen nur die Werte 'Aufsteigend' (Ascending) oder 'Absteigend' (Descending) verwendet werden."
+              },
+              {
+                "locale": "en_US",
+                "text": "Sort type: Only the values 'Ascending' or 'Descending' are allowed."
+              }
+            ]
+          }
+        },
+        "revision": "5"
+      }
+    ],
+    "modelRoot": {
+      "rootGroups": [
+        {
+          "type": "Group",
+          "id": "f39c6a38d61cffd2ea06606ff28d6d76",
+          "name": "REPO_DATA",
+          "Group": {
+            "repeatability": 1,
+            "elements": [
+              {
+                "type": "Group",
+                "id": "37a95f16a6fd1921492f10bf8fb2ffc7",
+                "name": "Data",
+                "annotations": [
+                  {
+                    "name": "_mgmtp.a12.kernel.BULK_MODEL",
+                    "value": ""
+                  }
+                ],
+                "Group": {
+                  "repeatability": 1,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "d7c3194f970302357a868c0c887be5d2",
+                      "name": "r_id",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "ENTITY_ID_1"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "cf742f3b9757ca676998873d527a25f4",
+                      "name": "r_dbVersion",
+                      "Field": {
+                        "fieldType": {
+                          "type": "NumberType",
+                          "NumberType": {
+                            "positivesOnly": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "Group",
+          "id": "f76c709095e91294161cdec441d833e2",
+          "name": "Data",
+          "Group": {
+            "repeatability": 1,
+            "elements": [
+              {
+                "type": "Group",
+                "id": "dfb3b47a8c93145e8e7d35ef14db08a9",
+                "name": "Group",
+                "annotations": [
+                  {
+                    "name": "_mgmtp.a12.kernel.BULK_MODEL",
+                    "value": ""
+                  }
+                ],
+                "Group": {
+                  "repeatability": 1,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "178bdecde2a8f4f1372a5fa67b1299a8",
+                      "name": "r_complexTypeLabelId",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "ENTITY_ID_1"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "44990c97da8c0ae5af629d141b1bd859",
+                      "name": "r_complexTypeTransferBlockData",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "CONFIRM_1"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "b43afd4ad65edfc0ef5684827f541f8f",
+                      "name": "ui_complexTypeName",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Complex Type"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Komplexer Typ"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "aecd1ed977965ca8ca35504438af8556",
+                      "name": "path",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "ABS_GROUP_PATH_ML_9"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Path"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Pfad"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "f20d48813fa83453f69d32938673c2f7",
+                      "name": "id",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "958581328bd742e3d6dd031db4cd7a16",
+                      "name": "name",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "GROUP_NAME_3"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "name"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Name"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "738b7f0ec97fdf7d5c753160159b9f74",
+                      "name": "repeatability",
+                      "Field": {
+                        "fieldType": {
+                          "type": "NumberType",
+                          "NumberType": {
+                            "positivesOnly": true
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "max. repeatability"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "max. Wiederholbarkeit"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "e5c250538aff4a2068e114a40e4cb43d",
+                      "name": "usageType",
+                      "Field": {
+                        "fieldType": {
+                          "type": "EnumerationType",
+                          "EnumerationType": {
+                            "values": [
+                              {
+                                "value": "attachment",
+                                "label": [
+                                  {
+                                    "locale": "de_DE",
+                                    "text": "Attachment"
+                                  },
+                                  {
+                                    "locale": "en_US",
+                                    "text": "Attachment"
+                                  }
+                                ]
+                              },
+                              {
+                                "value": "multi-select",
+                                "label": [
+                                  {
+                                    "locale": "de_DE",
+                                    "text": "Multi-Select"
+                                  },
+                                  {
+                                    "locale": "en_US",
+                                    "text": "Multi-Select"
+                                  }
+                                ]
+                              },
+                              {
+                                "value": "metadata",
+                                "label": [
+                                  {
+                                    "locale": "de_DE",
+                                    "text": "Metadaten"
+                                  },
+                                  {
+                                    "locale": "en_US",
+                                    "text": "Meta Data"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "a86c7f15844de7ca24619bbbf3689453",
+                      "name": "Index",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "89da24ca058ca33c56e5c4c57ca05b4f",
+                            "name": "IndexFields",
+                            "Group": {
+                              "repeatability": 1,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "ebe14386badd830f37f1d4c685057f1f",
+                                  "name": "indexField",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "REFERENCE_1"
+                                      }
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "index field"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Indexfeld"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "3f4825ad744854cd54a3d44b04d6cdc4",
+                      "name": "SortInfo",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "133b09fb0d9e3f679dee1f70c278709f",
+                            "name": "SortFields",
+                            "Group": {
+                              "repeatability": 3,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "d360ea26362315e972cb306579358c73",
+                                  "name": "sortField",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "FIELD_NAME_TRANSLATED_7"
+                                      }
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "sort field"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Sortierfeld"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "a664c4db1dc64b9c2c3912a44ff1c271",
+                                  "name": "sortType",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "SORT_TYPE_5"
+                                      }
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "sorting type"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Sortierart"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "dd22fa621575f1e6fe21e8812bb0f105",
+                      "name": "Annotations",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "17f96bd3a296bfa8b857f16dda2beb88",
+                            "name": "Annotation_list",
+                            "annotations": [
+                              {
+                                "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                                "value": "name"
+                              }
+                            ],
+                            "Group": {
+                              "repeatability": 100,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "f8181f2fb5641fb4f3d94c9f4a2d9b48",
+                                  "name": "name",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "StringType"
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "name"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Name"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "694fac1394851fe208a90be6109d19ec",
+                                  "name": "value",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "StringType"
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "value"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Wert"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "edcef685ca1aa784b0b77e7a6a53c64",
+                      "name": "Descriptions",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "408690525452e49094fa448fcbd23fef",
+                            "name": "Description_Internal",
+                            "annotations": [
+                              {
+                                "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                                "value": "language"
+                              }
+                            ],
+                            "Group": {
+                              "repeatability": 20,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "b12d55a3af71e4b5726452545c7741e6",
+                                  "name": "language",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "LANGUAGE_TYPE_2"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "fd2b3ea09bc49cdf4673331acf168e7d",
+                                  "name": "text",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "DESCRIPTION_TEXT_1"
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Group",
+                            "id": "f9885ddb3d4df15e79d01f4f1cdef1f8",
+                            "name": "Description_External",
+                            "annotations": [
+                              {
+                                "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                                "value": "language"
+                              }
+                            ],
+                            "Group": {
+                              "repeatability": 20,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "560b8d18f04f88a3241794e550636412",
+                                  "name": "language",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "LANGUAGE_TYPE_2"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "121366c1549330168dc93a1a64cd360a",
+                                  "name": "text",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "DESCRIPTION_TEXT_1"
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "ad0d5a282794a9f7b927fc9735eb7afd",
+                      "name": "Labels",
+                      "annotations": [
+                        {
+                          "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                          "value": "language"
+                        }
+                      ],
+                      "Group": {
+                        "repeatability": 100,
+                        "elements": [
+                          {
+                            "type": "Field",
+                            "id": "afdf43fada1e65b195ae3dbf9cf419f7",
+                            "name": "language",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "LANGUAGE_TYPE_2"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Field",
+                            "id": "7762cb342984ca25ad0e8a1337ba6358",
+                            "name": "label",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "DESCRIPTION_TEXT_1"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "616c0ff078b87b836474b8a5fa743bf6",
+                      "name": "includeConfig",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Field",
+                            "id": "293bf177a875f2d7ed9fc4dcfda75723",
+                            "name": "excludeValidationRules",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "CONFIRM_1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Field",
+                            "id": "1bbfdf0dc068a98ea5ffaf9010d8f9ea",
+                            "name": "excludeComputations",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "CONFIRM_1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Field",
+                            "id": "699edbb56a76896921a63bcb069410ab",
+                            "name": "reference",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "REFERENCE_1"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Group",
+                "id": "34f237cf39d50ae33b67df632a23d51d",
+                "name": "MetaData",
+                "Group": {
+                  "repeatability": 1,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "6964d007f5870c8e599b9eee7e38b05b",
+                      "name": "ext_maxDigits",
+                      "Field": {
+                        "fieldType": {
+                          "type": "NumberType",
+                          "NumberType": {
+                            "positivesOnly": true
+                          }
+                        },
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "7e8bdb72a47d49acae3933f9d9ff1bae",
+                      "name": "ext_programmingLanguage",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "PROGRAMMING_LANGUAGE_2"
+                          }
+                        },
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "8175b367688014c54f952cb86c0f05ef",
+                      "name": "ext_baseYearSpecified",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "BOOLEAN_1"
+                          }
+                        },
+                        "global": true,
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "dbcaa64c1dbced3fe46c47db088b486c",
+                      "name": "ext_a12Dv",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "BOOLEAN_1"
+                          }
+                        },
+                        "global": true,
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "3ff9c0a52577be5c62146899c4344c5b",
+                      "name": "ext_extmp",
+                      "Field": {
+                        "fieldType": {
+                          "type": "EnumerationType",
+                          "EnumerationType": {
+                            "values": [
+                              {
+                                "value": "false"
+                              },
+                              {
+                                "value": "true"
+                              }
+                            ]
+                          }
+                        },
+                        "global": true
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "32d1a7757bae3e3e06cde9e89319a8bb",
+                      "name": "ExtMPProperties",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Field",
+                            "id": "72db27a978e2566d750a3e286f95edd3",
+                            "name": "ext_isFKbasiert",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "BOOLEAN_1"
+                                }
+                              },
+                              "requirednessConfig": {
+                                "mode": "relativeToParent"
+                              }
+                            }
+                          },
+                          {
+                            "type": "Field",
+                            "id": "9bb147cc675f881027372645fc013f8b",
+                            "name": "ext_fgSOANamingConvention",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "BOOLEAN_1"
+                                }
+                              },
+                              "requirednessConfig": {
+                                "mode": "relativeToParent"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "eba7bdb56634b340f60929d079cb4d84",
+                      "name": "SupportedLanguages",
+                      "Group": {
+                        "repeatability": 100,
+                        "elements": [
+                          {
+                            "type": "Field",
+                            "id": "af454d52d01d258eb6f6ce863f921f4f",
+                            "name": "ext_language",
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "LANGUAGE_TYPE_2"
+                                }
+                              },
+                              "requirednessConfig": {
+                                "mode": "relativeToParent"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "1d31fcfc41a33f740c81b933dee97e2e",
+                      "name": "SupportedVariants",
+                      "Group": {
+                        "repeatability": 100,
+                        "elements": [
+                          {
+                            "type": "Field",
+                            "id": "bb43cba7b7d249a1b2f7f32b748c6604",
+                            "name": "ext_variantName",
+                            "Field": {
+                              "fieldType": {
+                                "type": "StringType",
+                                "StringType": {
+                                  "errorMessage": [
+                                    {
+                                      "locale": "de_DE",
+                                      "text": "Anwendungsnamen dürfen bis zu 8 Kleinbuchstaben, Zahlen oder Unterstriche verwenden. Der Anwendungsname darf nicht mit einer Zahl beginnen."
+                                    },
+                                    {
+                                      "locale": "en_US",
+                                      "text": "Variant names may contain up to 8 lower case letters, digits and underscores. A variant name may not start with a digit."
+                                    }
+                                  ],
+                                  "pattern": "[a-z_][a-z0-9_]{0,7}"
+                                }
+                              },
+                              "label": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "variant"
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Anwendung"
+                                }
+                              ],
+                              "requirednessConfig": {
+                                "mode": "relativeToParent"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "bbc7161af989f0f97362aac0f668db88",
+                      "name": "SupportedAnnotations",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "4a000cdc8c429af002f1ce27ca1ec636",
+                            "name": "SupportedAnnotation_list",
+                            "Group": {
+                              "repeatability": 1000,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "227df85f05808bffd7ed59a384737790",
+                                  "name": "ext_annotationKey",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "StringType"
+                                    },
+                                    "requirednessConfig": {
+                                      "mode": "relativeToParent"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

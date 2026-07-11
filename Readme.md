@@ -44,7 +44,7 @@ Where `<visibility>` is an infix such as `a12internal` or `extmpinternal`, absen
 
 - OpenJDK 21
 - Node.js 22
-- Gradle 8
+- Gradle 9
 
 #### How to Build
 

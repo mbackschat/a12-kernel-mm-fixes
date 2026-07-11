@@ -1,0 +1,453 @@
+{
+  "header": {
+    "id": "CT_MODEL_HEADER_1",
+    "modelType": "document",
+    "modelVersion": "28.3.0",
+    "locales": [
+      {
+        "code": "de_DE"
+      },
+      {
+        "code": "en_US"
+      }
+    ],
+    "labels": [],
+    "annotations": [
+      {
+        "name": "A12_fieldsOnly",
+        "value": ""
+      },
+      {
+        "name": "A12_variants",
+        "value": "a12,codegen,a12types"
+      }
+    ],
+    "modelReferences": []
+  },
+  "content": {
+    "modelInfo": {
+      "name": "CT_MODEL_HEADER_1",
+      "variant": "codegen",
+      "branch": "1",
+      "revision": "3.7",
+      "immutable": true
+    },
+    "modelConfig": {
+      "decimalSeparator": ".",
+      "timeZone": "Europe/Berlin",
+      "conditionLanguage": {
+        "code": "en_US"
+      }
+    },
+    "typeDefinitions": [
+      {
+        "id": "DESCRIPTION_TEXT_1",
+        "name": "DESCRIPTION_TEXT_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "lineBreaksPermitted": true,
+            "maxLength": 99999
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "LANGUAGE_TYPE_2",
+        "name": "LANGUAGE_TYPE_2",
+        "fieldType": {
+          "type": "StringType"
+        },
+        "revision": "2"
+      },
+      {
+        "id": "TEXT_WITH_LINE_BREAKS_1",
+        "name": "TEXT_WITH_LINE_BREAKS_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "lineBreaksPermitted": true,
+            "maxLength": 99999
+          }
+        },
+        "revision": "1"
+      }
+    ],
+    "modelRoot": {
+      "rootGroups": [
+        {
+          "type": "Group",
+          "id": "ed7bf76a659f45548bcb0c162e3b98f6",
+          "name": "header",
+          "Group": {
+            "repeatability": 1,
+            "elements": [
+              {
+                "type": "Field",
+                "id": "af7420fa590a23973eb6f797a620aaf5",
+                "name": "id",
+                "Field": {
+                  "fieldType": {
+                    "type": "StringType",
+                    "StringType": {
+                      "errorMessage": [
+                        {
+                          "locale": "de_DE",
+                          "text": "Es dürfen nur Buchstaben ohne Umlaute, Ziffern, Bindestriche, Unterstriche und Punkte verwendet werden. Außerdem darf der Name nur mit einem Buchstaben oder dem Unterstrich beginnen."
+                        },
+                        {
+                          "locale": "en_US",
+                          "text": "Use only letters, digits, hyphens, underscores and periods. Furthermore, the name may only start with a letter or underscore."
+                        }
+                      ],
+                      "maxLength": 100,
+                      "pattern": "[_a-zA-Z][-_.a-zA-Z0-9]*"
+                    }
+                  },
+                  "label": [
+                    {
+                      "locale": "en_US",
+                      "text": "Name"
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Name"
+                    }
+                  ],
+                  "requirednessConfig": {
+                    "mode": "relativeToParent"
+                  }
+                }
+              },
+              {
+                "type": "Field",
+                "id": "48131297b1b192478e4eeefc4e02e32e",
+                "name": "modelType",
+                "Field": {
+                  "fieldType": {
+                    "type": "StringType"
+                  },
+                  "label": [
+                    {
+                      "locale": "en_US",
+                      "text": "Model"
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Modell"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Field",
+                "id": "2e49eb2b0798f27a68d744ad06107df4",
+                "name": "modelVersion",
+                "Field": {
+                  "fieldType": {
+                    "type": "StringType"
+                  },
+                  "label": [
+                    {
+                      "locale": "en_US",
+                      "text": "Model Version"
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Modellversion"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Field",
+                "id": "551ae6168bf4d8e12e986728d89f3d0d",
+                "name": "description",
+                "Field": {
+                  "fieldType": {
+                    "type": "TypeDefType",
+                    "TypeDefType": {
+                      "typeDefinitionId": "TEXT_WITH_LINE_BREAKS_1"
+                    }
+                  },
+                  "label": [
+                    {
+                      "locale": "en_US",
+                      "text": "Description (internal)"
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Beschreibung (intern)"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Group",
+                "id": "86e3730b03920cc7da0b12449bd2a791",
+                "name": "locales",
+                "Group": {
+                  "repeatability": 100,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "3a8efbd10256755beaa41297931be1dd",
+                      "name": "code",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "LANGUAGE_TYPE_2"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Code"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Code"
+                          }
+                        ],
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Group",
+                "id": "c3f0f97d856338ecf59ee1f4b6c35e01",
+                "name": "labels",
+                "Group": {
+                  "repeatability": 100,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "a1a520ae4b54c16c14af2f9659607915",
+                      "name": "locale",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "LANGUAGE_TYPE_2"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Locale"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Locale"
+                          }
+                        ],
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "339c59ad8a0d4b613fa0d33f8869c95",
+                      "name": "text",
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "DESCRIPTION_TEXT_1"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Text"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Text"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Group",
+                "id": "b7202ee6550b17045be59c0e68d09ada",
+                "name": "annotations",
+                "Group": {
+                  "repeatability": 100,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "e915ad67a1eb81c01d8a535539d65244",
+                      "name": "name",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Name"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Name"
+                          }
+                        ],
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "10e66baa323b5c1de9f04917dd5bfb2d",
+                      "name": "value",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Value"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Wert"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Group",
+                "id": "b5e1a8eb355b4f1757c0349285695be1",
+                "name": "modelReferences",
+                "Group": {
+                  "repeatability": 100,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "38369078272c63b263db565cff0e2642",
+                      "name": "alias",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Alias"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Alias"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "1eeda6c6daf686969d9770167b1fa21f",
+                      "name": "modelType",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Model Type"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Modelltyp"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "ed3faa9cdb10e8e8166a1aad0b6ab8da",
+                      "name": "purpose",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Purpose"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Verwendung"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "6e0223c4ed7580f817ff00541c67de30",
+                      "name": "reference",
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "Reference"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Referenz"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Rule",
+                "id": "7acf3db4bd4a4a976198390b76781191",
+                "name": "HEADER_ID_STARTS_WITH_XML",
+                "Rule": {
+                  "errorEntityRelPath": "../id",
+                  "errorCode": "HEADER_ID_STARTS_WITH_XML",
+                  "errorCondition": "FieldFilled(id)\nAnd [id] PatternMatched \"[xX][mM][lL].*\"",
+                  "severity": "ERROR",
+                  "errorMessage": [
+                    {
+                      "locale": "en_US",
+                      "text": "The name may not start with xml in any form of upper and lower case letters."
+                    },
+                    {
+                      "locale": "de_DE",
+                      "text": "Der Name darf nicht mit XML beginnen in jeder Form von Groß- und Kleinschreibung."
+                    }
+                  ],
+                  "guiPatterns": {
+                    "dynamicEnumeration": "false"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

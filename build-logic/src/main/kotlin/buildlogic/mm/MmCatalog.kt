@@ -26,13 +26,14 @@ object MmCatalog {
         "import",
         "gui",
         "a12",
+        "a12types",
         "a12_cgen",
         "none",
     )
 
     val variantsForSmeDmjsons = setOf("a12")
 
-    val variantForPublicTypings = "a12" // TODO (later, not urgent because variant is not publicly visible) introduce "apitypings" variant
+    val variantForPublicTypings = "a12types"
 
     /**
      * @return a map from subproject name to config for that subproject
@@ -282,10 +283,6 @@ fun makeTypingsProjectConfig(mvv: ModelVersionVariant, rootDir: File): TypingsPr
     )
 }
 
-private fun occursInModelVersionsThatCanHavePublicArtifacts(mvv: ModelVersionVariant): Boolean {
-    return MmCatalog.modelVersionsThatCanHavePublicArtifacts.contains("${mvv.modelName}-${mvv.version}")
-}
-
 enum class ArtifactType { DMJSONS, VALIDATORS, TYPINGS }
 
 /**
@@ -385,25 +382,20 @@ fun modelVersionVariantsFromFiles(projRootDir: File): Set<ModelVersionVariant> {
 }
 
 private fun collectModelVersionVariantsFromDmFiles(rootDir: File): Set<ModelVersionVariant> {
-    val modelVersionCandidates = discoverModelVersionsFromDmFolders(rootDir)
-    val versionsKeys = loadVersions(rootDir).keys
     return buildSet {
-        for ((modelName, version) in modelVersionCandidates) {
-            val hasVersionKey = getKeyForVersionsFile(modelName, version) in versionsKeys
-            if (!hasVersionKey) {
-                println("WARNING: no version found for modelName=$modelName, version=$version in latestKernelMMVersions.properties, latestServerMMVersions.properties, latestEditorMMVersions.properties or latestSmeMMVersions.properties, skipping this (model, version) even though there is a corresponding folder ")
-                continue
-            }
+        for ((modelName, version) in discoverConfiguredModelVersions(rootDir)) {
             val pattern = dmFileNamePattern(modelName, version)
             addAll(mergedFilesByModelVersion(rootDir, modelName, version).asSequence()
                 .map { f ->
                     val m = pattern.matchEntire(f.name)
-                    if(m != null) {
-                        ModelVersionVariant(modelName=modelName, version=version, variant = m.groups["variant"]!!.value, isSpecialBulkVariation = m.groups["bulk"] != null)
+                    if (m != null) {
+                        ModelVersionVariant(modelName=modelName, version=version,
+                            variant = m.groups["variant"]!!.value,
+                            isSpecialBulkVariation = m.groups["bulk"] != null)
                     } else {
                         error("unexpected file name pattern: ${f.name}")
                     }
-            })
+                })
         }
     }
 }

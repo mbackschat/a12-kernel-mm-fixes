@@ -2,7 +2,7 @@
   "header": {
     "id": "MM_Computation_1",
     "modelType": "document",
-    "modelVersion": "28.3.0",
+    "modelVersion": "28.4.0",
     "locales": [
       {
         "code": "de_DE"
@@ -883,7 +883,7 @@
                       "externalDescription": [
                         {
                           "locale": "de_DE",
-                          "text": "A12 only\r\nThe rule prevents name conflicts with internally used rule names."
+                          "text": "A12 only\nThe rule prevents name conflicts with internally used rule names."
                         }
                       ],
                       "Rule": {
@@ -1033,7 +1033,7 @@
                       "externalDescription": [
                         {
                           "locale": "de_DE",
-                          "text": "A12 only \r\nensures the name is not duplicated in the parent group"
+                          "text": "A12 only \nensures the name is not duplicated in the parent group"
                         }
                       ],
                       "Rule": {

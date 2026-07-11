@@ -1,6 +1,6 @@
 [versions]
-extVersion = "54"
-currentKernelVersion = "30.8.0" # If changed you have also to adapt the kernel-core-runtime artifactId!!!. Additionally, minKernelCoreRuntimeApiVersion _should_ be updated to match the version that is transitively referenced by the core-runtime of currentKernelVersion
+extVersion = "55"
+currentKernelVersion = "30.8.1" # If changed you have also to adapt the kernel-core-runtime artifactId!!!. Additionally, minKernelCoreRuntimeApiVersion _should_ be updated to match the version that is transitively referenced by the core-runtime of currentKernelVersion
 minKernelCoreRuntimeApiVersion = "32.3.4" # actual version will/may be higher if the runtime depends on a higher version. we just need to specify _some_ (effectively minimum) version because cyclonedx will otherwise fail
 kernelRuntimeArtifactId = "30-8"
 com-mgmtp-a12-base = "29.0.1"
@@ -24,6 +24,7 @@ junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "org-
 junitJupiterApi = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "org-junit-jupiter" }
 junitJupiterParams = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "org-junit-jupiter" }
 junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "org-junit-platform" }
+
 [bundles]
 
 [plugins]

@@ -1,11 +1,14 @@
 package com.mgmtp.a12.kernel.mmtypings;
 
+import com.mgmtp.a12.kernel.mmtypings.mm_mappingmodel_2.views._mm_mappingmodel_2._content.MappingType;
+import com.mgmtp.a12.kernel.mmtypings.mm_structuralmappingmodel_1.views.MM_StructuralMappingModel_1;
+import com.mgmtp.a12.kernel.mmtypings.mm_structuralmappingmodel_1.views._mm_structuralmappingmodel_1._content._mappingblocks._resolutionstrategies.Type;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import com.mgmtp.a12.kernel.mmtypings.mm_mappingmodel_2.views.MM_MappingModel_2;
 import com.mgmtp.a12.kernel.mmtypings.mm_combinationmodel_1.views.MM_CombinationModel_1;
 import com.mgmtp.a12.kernel.mmtypings.mm_selectionmodel_2.views.MM_SelectionModel_2;
-import com.mgmtp.a12.kernel.mmtypings.extmpinternal.selectionmodel_v1_a12.views.SelectionModel_V1;
+import com.mgmtp.a12.kernel.mmtypings.extmpinternal.selectionmodel_v1_a12types.views.SelectionModel_V1;
 import com.mgmtp.a12.kernel.mmtypings.ct_selection_v1.views._ct_selection_v1.Selection;
 import com.mgmtp.a12.kernel.mmtypings.ct_selection_v1.views._ct_selection_v1._selection.Escaped_Default;
 import com.mgmtp.a12.kernel.md.document.apiV2.immutable.DocumentV2;
@@ -80,6 +83,18 @@ public class TestApiTypings {
                         com.mgmtp.a12.kernel.mmtypings.extmpinternal.mm_mappingmodel_2_none.views.MM_MappingModel_2.class.getMethods())
                 .anyMatch(m -> m.getName().equals(repoData_methodName));
         assertEquals(true, noneHasRepoData);
+    }
+
+    // temporary test, can be removed after the 31.x kernel release
+    @Test void testIs31OrLaterTypingsGenerator() {
+        MM_MappingModel_2 mm = MM_MappingModel_2._empty()
+                ._with(MM_MappingModel_2._pointer().content().mappingType(), MappingType.De_DE.import_A); // enum class for Nichtabgeschlossene Enumeration field
+
+        assertEquals("import_A", mm._unwrap().fieldValue(MM_MappingModel_2._pointer().content().mappingType()._unwrap()));
+
+        MM_StructuralMappingModel_1 smm =  MM_StructuralMappingModel_1._empty()
+            ._with(MM_StructuralMappingModel_1._pointer().content().mappingBlocks(1).resolutionStrategies(1).type(),
+                        Type.Slice); // check that Type is now capitalized
     }
 
 }
