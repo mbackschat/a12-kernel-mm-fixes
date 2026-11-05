@@ -8,6 +8,7 @@ plugins {
 
 group = "com.mgmtp.a12.kernel"
 
+
 tasks.register("updateAndCommitVersions") {
     group = "KERNEL" // set some group so the task gets shown by gradle tasks by default
     dependsOn("clean", "updateMMVersions", "commitMMVersionChanges") // ordering is configured by mustRunAfter in commitMMVersionChanges

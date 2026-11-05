@@ -128,7 +128,7 @@ val npm_publish = tasks.register<Exec>("npm_publish") {
     group = "Publishing"
     description = "Publishes the npm artifact with DM JSONs"
     dependsOn(prepareNpmPackage)
-    dependsOn(tasks.test) // similar to the setting for maven publish tasks in java-conventions, only publish after tests (if any exist) have passed
+    dependsOn(tasks.check) // similar to the setting for maven publish tasks in java-conventions, only publish after tests (if any exist) have passed
     // write the tgz outside the input directory
     workingDir = npmDir.map { it.dir("npm_publish_artifacts_dir") }.get().asFile
     val npmExecutable = if (System.getProperty("os.name").lowercase().contains("windows")) "npm.cmd" else "npm"
@@ -178,7 +178,4 @@ tasks.matching {
 }
 
 // tests are shared across all mmdmjsons subprojects, in the :test-mmdmjsons subproject
-evaluationDependsOn(":test-mmdmjsons")
-tasks.matching { it.name.equals("test") }.configureEach {
-    dependsOn(":test-mmdmjsons:test")
-}
+delegateTestsToSharedTestProject(":test-mmdmjsons")

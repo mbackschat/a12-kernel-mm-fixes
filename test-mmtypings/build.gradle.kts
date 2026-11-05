@@ -8,7 +8,6 @@ dependencies {
     testImplementation(project(":mmtypings:mmtypings-mm_mappingmodel-2")) // the public MM typings must not have the variant in their artifact id / project name (variants should not be visible at the api)
     testImplementation(project(":mmtypings:mmtypings-extmpinternal-mm_mappingmodel-2-none")) // internal "none" variant (contains e.g. REPO_DATA, serves as a positive control for the test that ensures that variant-specific groups are not present in the a12 (public) variant
     testImplementation(project(":mmtypings:mmtypings-mm_combinationmodel-1"))
-    testImplementation(project(":mmtypings:mmtypings-extmpinternal-selectionmodel-v1-a12types"))
     testImplementation(project(":mmtypings:mmtypings-mm_selectionmodel-2"))
     // only temporarily for the 31-or-later test testIs31OrLaterTypingsGenerator:
     testImplementation(project(":mmtypings:mmtypings-mm_structuralmappingmodel-1"))

@@ -1,0 +1,1576 @@
+{
+  "header": {
+    "id": "MM_Group_1",
+    "modelType": "document",
+    "modelVersion": "29.4.0",
+    "locales": [
+      {
+        "code": "de_DE"
+      },
+      {
+        "code": "en_US"
+      }
+    ],
+    "labels": [],
+    "annotations": [
+      {
+        "name": "A12_fieldsOnly",
+        "value": ""
+      },
+      {
+        "name": "A12_variants",
+        "value": "a12"
+      },
+      {
+        "name": "_mgmtp.a12.kernel.BULK_MODEL",
+        "value": ""
+      }
+    ],
+    "modelReferences": []
+  },
+  "content": {
+    "modelInfo": {
+      "name": "MM_Group_1",
+      "variant": "a12",
+      "branch": "1",
+      "revision": "14.3",
+      "immutable": true
+    },
+    "modelConfig": {
+      "decimalSeparator": ".",
+      "timeZone": "Europe/Berlin",
+      "conditionLanguage": {
+        "code": "en_US"
+      }
+    },
+    "typeDefinitions": [
+      {
+        "id": "BOOLEAN_1",
+        "name": "BOOLEAN_1",
+        "fieldType": {
+          "type": "BooleanType"
+        },
+        "revision": "1"
+      },
+      {
+        "id": "CONFIRM_1",
+        "name": "CONFIRM_1",
+        "fieldType": {
+          "type": "ConfirmType"
+        },
+        "revision": "1"
+      },
+      {
+        "id": "DESCRIPTION_TEXT_1",
+        "name": "DESCRIPTION_TEXT_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "lineBreaksPermitted": true,
+            "maxLength": 99999
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "GROUP_NAME_3",
+        "name": "GROUP_NAME_3",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "$field.value$: Kontextnamen dürfen nur aus Buchstaben, Ziffern oder Unterstrichen bestehen. Kontextnamen müssen mit einem Buchstaben beginnen."
+              },
+              {
+                "locale": "en_US",
+                "text": "$field.value$: A group name may only contain letters, numbers or underscores. Group names must begin with a letter or an underscore."
+              }
+            ],
+            "maxLength": 60,
+            "pattern": "[a-zA-Z_][a-zA-Z0-9_üöäÜÖÄß]*"
+          }
+        },
+        "revision": "3"
+      },
+      {
+        "id": "LANGUAGE_TYPE_2",
+        "name": "LANGUAGE_TYPE_2",
+        "fieldType": {
+          "type": "StringType"
+        },
+        "revision": "2"
+      },
+      {
+        "id": "REFERENCE_1",
+        "name": "REFERENCE_1",
+        "fieldType": {
+          "type": "StringType",
+          "StringType": {
+            "maxLength": 714
+          }
+        },
+        "revision": "1"
+      },
+      {
+        "id": "SORT_TYPE_5",
+        "name": "SORT_TYPE_5",
+        "fieldType": {
+          "type": "EnumerationType",
+          "EnumerationType": {
+            "values": [
+              {
+                "value": "Ascending",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Aufsteigend"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "Ascending"
+                  }
+                ]
+              },
+              {
+                "value": "Descending",
+                "label": [
+                  {
+                    "locale": "de_DE",
+                    "text": "Absteigend"
+                  },
+                  {
+                    "locale": "en_US",
+                    "text": "Descending"
+                  }
+                ]
+              }
+            ],
+            "errorMessage": [
+              {
+                "locale": "de_DE",
+                "text": "Sortierart: Es dürfen nur die Werte 'Aufsteigend' (Ascending) oder 'Absteigend' (Descending) verwendet werden."
+              },
+              {
+                "locale": "en_US",
+                "text": "Sort type: Only the values 'Ascending' or 'Descending' are allowed."
+              }
+            ]
+          }
+        },
+        "revision": "5"
+      }
+    ],
+    "modelRoot": {
+      "rootGroups": [
+        {
+          "type": "Group",
+          "id": "f76c709095e91294161cdec441d833e2",
+          "name": "Data",
+          "Group": {
+            "repeatability": 1,
+            "elements": [
+              {
+                "type": "Group",
+                "id": "dfb3b47a8c93145e8e7d35ef14db08a9",
+                "name": "Group",
+                "annotations": [
+                  {
+                    "name": "_mgmtp.a12.kernel.BULK_MODEL",
+                    "value": ""
+                  }
+                ],
+                "Group": {
+                  "repeatability": 1,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "f20d48813fa83453f69d32938673c2f7",
+                      "name": "id",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "A12 only\n\n####"
+                        }
+                      ],
+                      "Field": {
+                        "fieldType": {
+                          "type": "StringType"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "958581328bd742e3d6dd031db4cd7a16",
+                      "name": "name",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "name of the group\nThis field is mandatory.\n\n####"
+                        }
+                      ],
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "GROUP_NAME_3"
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "name"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Name"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "738b7f0ec97fdf7d5c753160159b9f74",
+                      "name": "repeatability",
+                      "Field": {
+                        "fieldType": {
+                          "type": "NumberType",
+                          "NumberType": {
+                            "positivesOnly": true
+                          }
+                        },
+                        "label": [
+                          {
+                            "locale": "en_US",
+                            "text": "max. repeatability"
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "max. Wiederholbarkeit"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "e5c250538aff4a2068e114a40e4cb43d",
+                      "name": "usageType",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "A12 only. \nUsage type of this group or not set.\n\n####"
+                        }
+                      ],
+                      "Field": {
+                        "fieldType": {
+                          "type": "EnumerationType",
+                          "EnumerationType": {
+                            "values": [
+                              {
+                                "value": "attachment",
+                                "label": [
+                                  {
+                                    "locale": "de_DE",
+                                    "text": "Attachment"
+                                  },
+                                  {
+                                    "locale": "en_US",
+                                    "text": "Attachment"
+                                  }
+                                ]
+                              },
+                              {
+                                "value": "multi-select",
+                                "label": [
+                                  {
+                                    "locale": "de_DE",
+                                    "text": "Multi-Select"
+                                  },
+                                  {
+                                    "locale": "en_US",
+                                    "text": "Multi-Select"
+                                  }
+                                ]
+                              },
+                              {
+                                "value": "metadata",
+                                "label": [
+                                  {
+                                    "locale": "de_DE",
+                                    "text": "Metadaten"
+                                  },
+                                  {
+                                    "locale": "en_US",
+                                    "text": "Meta Data"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "a86c7f15844de7ca24619bbbf3689453",
+                      "name": "Index",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "89da24ca058ca33c56e5c4c57ca05b4f",
+                            "name": "IndexFields",
+                            "Group": {
+                              "repeatability": 1,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "ebe14386badd830f37f1d4c685057f1f",
+                                  "name": "indexField",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "REFERENCE_1"
+                                      }
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "index field"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Indexfeld"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "5df815a258e9e11ac6fc242dcec4ca40",
+                            "name": "A12_INDEX_FIELD_INVALID_REFERENCE",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Rule": {
+                              "errorEntityRelPath": "../IndexFields/indexField",
+                              "errorCode": "INDEX_FIELD_INVALID_REFERENCE",
+                              "errorCondition": "FieldFilled(IndexFields/indexField)\nAnd CustomCondition InvalidReference",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "The index field is not a valid field."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Das angegebene Indexfeld existiert nicht."
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "3f4825ad744854cd54a3d44b04d6cdc4",
+                      "name": "SortInfo",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "133b09fb0d9e3f679dee1f70c278709f",
+                            "name": "SortFields",
+                            "Group": {
+                              "repeatability": 3,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "d360ea26362315e972cb306579358c73",
+                                  "name": "sortField",
+                                  "internalDescription": [
+                                    {
+                                      "locale": "de_DE",
+                                      "text": "specifies a field which is used for creating a sorter. \nmandatory field if sort info is specified.\n\n####"
+                                    }
+                                  ],
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "REFERENCE_1"
+                                      }
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "sort field"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Sortierfeld"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "a664c4db1dc64b9c2c3912a44ff1c271",
+                                  "name": "sortType",
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "SORT_TYPE_5"
+                                      }
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "sorting type"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Sortierart"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "Rule",
+                                  "id": "bd43468cde4b1c9c051f223ac92b6886",
+                                  "name": "SORT_INFO_MISSING",
+                                  "Rule": {
+                                    "errorEntityRelPath": "../sortField",
+                                    "errorCode": "SORT_INFO_MISSING",
+                                    "errorCondition": "FieldsNotCollectivelyFilled(sortField, sortType)",
+                                    "severity": "ERROR",
+                                    "errorMessage": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "To mark a field as a sort field, the field name and the sorting type have to be specified together."
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Um ein Feld als Sortierfeld zu markieren, müssen jeweils Feldname und Sortierart gemeinsam spezifiziert werden."
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "Rule",
+                                  "id": "166ce98669a0e3ff8dd797438cae8a15",
+                                  "name": "A12_SORT_FIELD_INVALID_REFERENCE",
+                                  "internalDescription": [
+                                    {
+                                      "locale": "de_DE",
+                                      "text": "A12 only\n\n####"
+                                    }
+                                  ],
+                                  "Rule": {
+                                    "errorEntityRelPath": "../sortField",
+                                    "errorCode": "SORT_FIELD_INVALID_REFERENCE",
+                                    "errorCondition": "FieldFilled(sortField)\nAnd CustomCondition InvalidReference",
+                                    "severity": "ERROR",
+                                    "errorMessage": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "The sort field is not a valid field."
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Das angegebene Sortierfeld existiert nicht."
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "50d9313501c6ae6af80c090caf84fab2",
+                            "name": "SORT_FIELD_DUPLICATE",
+                            "Rule": {
+                              "errorEntityRelPath": "../SortFields/sortField",
+                              "errorCode": "SORT_FIELD_DUPLICATE",
+                              "errorCondition": "RepetitionNotUnique(SortFields/sortField)",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "The field '$SortFields/sortField.value$' is used as a sort field more than once for the same group."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Das Feld '$SortFields/sortField.value$' wurde mehrfach als Sortierfeld für den gleichen Kontext angegeben."
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "dd22fa621575f1e6fe21e8812bb0f105",
+                      "name": "Annotations",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "17f96bd3a296bfa8b857f16dda2beb88",
+                            "name": "Annotation_list",
+                            "annotations": [
+                              {
+                                "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                                "value": "name"
+                              }
+                            ],
+                            "Group": {
+                              "repeatability": 100,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "f8181f2fb5641fb4f3d94c9f4a2d9b48",
+                                  "name": "name",
+                                  "internalDescription": [
+                                    {
+                                      "locale": "de_DE",
+                                      "text": "name of the annotation, used as a key. \nIt is mandatory.\nAt the moment, there is no restrictions. We will discuss this and add restrictions to make it more safe.\n\n####"
+                                    }
+                                  ],
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "StringType"
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "name"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Name"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "694fac1394851fe208a90be6109d19ec",
+                                  "name": "value",
+                                  "internalDescription": [
+                                    {
+                                      "locale": "de_DE",
+                                      "text": "value of the annotation.\nThe field is optional - i.e. it is allowed to have an annotation with an empty value.\n\n####"
+                                    }
+                                  ],
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "StringType"
+                                    },
+                                    "label": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "value"
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Wert"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "Rule",
+                                  "id": "949adb0ffbc98ee4b6f0fabed26712",
+                                  "name": "ANNOTATION_NAME_MISSING",
+                                  "Rule": {
+                                    "errorEntityRelPath": "../name",
+                                    "errorCode": "ANNOTATION_NAME_MISSING",
+                                    "errorCondition": "GroupFilled(RuleGroup)\nAnd FieldNotFilled(name)",
+                                    "severity": "ERROR",
+                                    "errorMessage": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "The name of the annotation is missing. This is not allowed."
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Es wurde kein Annotationsname spezifiziert. Dies ist nicht zulässig."
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "d80035776f06ede3f2fd345ef4bc328e",
+                            "name": "ANNOTATION_DUPLICATE",
+                            "Rule": {
+                              "errorEntityRelPath": "../Annotation_list/name",
+                              "errorCode": "ANNOTATION_DUPLICATE",
+                              "errorCondition": "RepetitionNotUnique(Annotation_list/name)",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "The name '$Annotation_list/name.value$' is used multiple times. This is not allowed."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Der Annotationsname '$Annotation_list/name.value$' wurde mehrfach angegeben. Dies ist nicht zulässig."
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "edcef685ca1aa784b0b77e7a6a53c64",
+                      "name": "Descriptions",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Group",
+                            "id": "408690525452e49094fa448fcbd23fef",
+                            "name": "Description_Internal",
+                            "annotations": [
+                              {
+                                "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                                "value": "language"
+                              }
+                            ],
+                            "Group": {
+                              "repeatability": 20,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "b12d55a3af71e4b5726452545c7741e6",
+                                  "name": "language",
+                                  "internalDescription": [
+                                    {
+                                      "locale": "de_DE",
+                                      "text": "Specifies the language of the text. The field is mandatory if a text is specified.\n\n####"
+                                    }
+                                  ],
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "LANGUAGE_TYPE_2"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "fd2b3ea09bc49cdf4673331acf168e7d",
+                                  "name": "text",
+                                  "internalDescription": [
+                                    {
+                                      "locale": "de_DE",
+                                      "text": "The field is mandatory if a language is specified. Specifying an empty text is not allowed.\n\n####"
+                                    }
+                                  ],
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "DESCRIPTION_TEXT_1"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Rule",
+                                  "id": "657534bd9e457815e2d29ce2b071a82a",
+                                  "name": "A12_LANGUAGE_MISSING",
+                                  "Rule": {
+                                    "errorEntityRelPath": "../text",
+                                    "errorCode": "LANGUAGE_MISSING",
+                                    "errorCondition": "FieldFilled(text)\nAnd FieldNotFilled(language)",
+                                    "severity": "ERROR",
+                                    "errorMessage": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "Text and language must be specified together."
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Zu dem Text muss eine Sprache angegeben werden."
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Group",
+                            "id": "f9885ddb3d4df15e79d01f4f1cdef1f8",
+                            "name": "Description_External",
+                            "annotations": [
+                              {
+                                "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                                "value": "language"
+                              }
+                            ],
+                            "Group": {
+                              "repeatability": 20,
+                              "elements": [
+                                {
+                                  "type": "Field",
+                                  "id": "560b8d18f04f88a3241794e550636412",
+                                  "name": "language",
+                                  "internalDescription": [
+                                    {
+                                      "locale": "de_DE",
+                                      "text": "Specifies the language of the text. The field is mandatory if a text is specified.\n\n####"
+                                    }
+                                  ],
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "LANGUAGE_TYPE_2"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Field",
+                                  "id": "121366c1549330168dc93a1a64cd360a",
+                                  "name": "text",
+                                  "internalDescription": [
+                                    {
+                                      "locale": "de_DE",
+                                      "text": "The field is mandatory if a language is specified. Specifying an empty text is not allowed.\n\n####"
+                                    }
+                                  ],
+                                  "Field": {
+                                    "fieldType": {
+                                      "type": "TypeDefType",
+                                      "TypeDefType": {
+                                        "typeDefinitionId": "DESCRIPTION_TEXT_1"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Rule",
+                                  "id": "a56370dabe2d8bf6181dbc5574fb6382",
+                                  "name": "A12_LANGUAGE_MISSING",
+                                  "Rule": {
+                                    "errorEntityRelPath": "../text",
+                                    "errorCode": "LANGUAGE_MISSING",
+                                    "errorCondition": "FieldFilled(text)\nAnd FieldNotFilled(language)",
+                                    "severity": "ERROR",
+                                    "errorMessage": [
+                                      {
+                                        "locale": "en_US",
+                                        "text": "Text and language must be specified together."
+                                      },
+                                      {
+                                        "locale": "de_DE",
+                                        "text": "Zu dem Text muss eine Sprache angegeben werden."
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "3ba7a78520bebec02c512623175ad806",
+                            "name": "A12_LANGUAGE_DESCRIPTION_INT_DUPLICATE",
+                            "Rule": {
+                              "errorEntityRelPath": "../Description_Internal/language",
+                              "errorCode": "LANGUAGE_DESCRIPTION_INT_DUPLICATE",
+                              "errorCondition": "RepetitionNotUnique(Description_Internal/language)",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "$Description_Internal/language$' is specified multiple times. This is not allowed."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Für die mehrsprachige interne Beschreibung wurde die Sprache '$Description_Internal/language$' mehrfach angegeben. Das ist nicht zulässig."
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "84e201d1527c876dc9bd728e5af0aa7c",
+                            "name": "A12_LANGUAGE_DESCRIPTION_EXT_DUPLICATE",
+                            "Rule": {
+                              "errorEntityRelPath": "../Description_External/language",
+                              "errorCode": "LANGUAGE_DESCRIPTION_EXT_DUPLICATE",
+                              "errorCondition": "RepetitionNotUnique(Description_External/language)",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "$Description_External/language$' is specified multiple times. This is not allowed."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Für die mehrsprachige externe Beschreibung wurde die Sprache '$Description_External/language$' mehrfach angegeben. Das ist nicht zulässig."
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "ad0d5a282794a9f7b927fc9735eb7afd",
+                      "name": "Labels",
+                      "annotations": [
+                        {
+                          "name": "_mgmtp.a12.sme.dmm.INDEX_FIELD",
+                          "value": "language"
+                        }
+                      ],
+                      "Group": {
+                        "repeatability": 100,
+                        "elements": [
+                          {
+                            "type": "Field",
+                            "id": "afdf43fada1e65b195ae3dbf9cf419f7",
+                            "name": "language",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\nSpecifies the language of the text. The field is mandatory if a text is specified.\n\n####"
+                              }
+                            ],
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "LANGUAGE_TYPE_2"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Field",
+                            "id": "7762cb342984ca25ad0e8a1337ba6358",
+                            "name": "label",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "DESCRIPTION_TEXT_1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "c98b4115accdeac3546098da94a6cbf0",
+                            "name": "A12_LANGUAGE_MISSING",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Rule": {
+                              "errorEntityRelPath": "../language",
+                              "errorCode": "LANGUAGE_MISSING",
+                              "errorCondition": "GroupFilled(RuleGroup)\nAnd FieldNotFilled(language)",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "No language is specified."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Es wurde keine Sprache angegeben."
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "id": "616c0ff078b87b836474b8a5fa743bf6",
+                      "name": "includeConfig",
+                      "Group": {
+                        "repeatability": 1,
+                        "elements": [
+                          {
+                            "type": "Field",
+                            "id": "9d305305169da7c6ba3ca7c3f215afa2",
+                            "name": "excludeRules",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\nused to specify for an include if the Validation rules are included or not.\nMay only be true, if usageType is complex type.\n\n####"
+                              }
+                            ],
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "CONFIRM_1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Field",
+                            "id": "1bbfdf0dc068a98ea5ffaf9010d8f9ea",
+                            "name": "excludeComputations",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\nused to specify for an include if the computations are included or not.\nMay only be true, if usageType is complex type.\n\n####"
+                              }
+                            ],
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "CONFIRM_1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Field",
+                            "id": "699edbb56a76896921a63bcb069410ab",
+                            "name": "reference",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Field": {
+                              "fieldType": {
+                                "type": "TypeDefType",
+                                "TypeDefType": {
+                                  "typeDefinitionId": "REFERENCE_1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "78b7ccd02f649ceaf3308564df385a2e",
+                            "name": "A12_MODEL_REFERENCE_INVALID_LOCALES",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Rule": {
+                              "errorEntityRelPath": "../reference",
+                              "errorCode": "MODEL_REFERENCE_INVALID_LOCALES",
+                              "errorCondition": "FieldFilled(reference)\nAnd CustomCondition DMInvalidIncludeLocales",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "The included model does not contain all locales of the current model."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Das inkludierte Modell enthält nicht alle Locales des inkludierenden Modells."
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "6fa1bcc238382d1f9b2a21a17f122cb",
+                            "name": "A12_MODEL_REFERENCE_HAS_MORE_THAN_ONE_ROOTGROUP",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Rule": {
+                              "errorEntityRelPath": "../reference",
+                              "errorCode": "MODEL_REFERENCE_HAS_MORE_THAN_ONE_ROOTGROUP",
+                              "errorCondition": "FieldFilled(reference)\nAnd CustomCondition IncludeDoesNotContainSingleNonRepeatableGroup",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "The included model may only contain a single, non-repeatable group at top level."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Das inkludierte Modell darf auf der obersten Ebene nur eine, nicht wiederholbare Gruppe enthalten."
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "15c55bee24eb2a93172e1f232d1e1e6e",
+                            "name": "A12_MODEL_REFERENCE_CREATES_INCLUDES_LOOP",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Rule": {
+                              "errorEntityRelPath": "../reference",
+                              "errorCode": "MODEL_REFERENCE_CREATES_INCLUDES_LOOP",
+                              "errorCondition": "FieldFilled(reference)\nAnd CustomCondition IncludeLoop",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "$reference.value$ already includes the current model directly or through one of its includes. Creating circular includes is forbidden."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "$reference.value$ inkludiert das aktuelle Modell direkt oder indirekt durch eines seiner includes. Dies ist nicht erlaubt."
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "c566fb557abdc119dc361fe6693b2965",
+                            "name": "A12_MODEL_REFERENCE_INVALID_REFERENCE",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Rule": {
+                              "errorEntityRelPath": "../reference",
+                              "errorCode": "MODEL_REFERENCE_INVALID_REFERENCE",
+                              "errorCondition": "FieldFilled(reference)\nAnd CustomCondition InvalidReference",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "The specified model does not exist."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Die Modellreferenz ist nicht gültig."
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "f18b68c4fa0c174dde07e8b1d5b0eb0a",
+                            "name": "A12_EXCLUDE_RULES_INVALID",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Rule": {
+                              "errorEntityRelPath": "../excludeRules",
+                              "errorCode": "EXCLUDE_RULES_INVALID",
+                              "errorCondition": "FieldFilled(excludeRules)\nAnd FieldNotFilled(reference)",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "Internal Error: excludeRules filled and reference not filled."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Interner Fehler: excludeRules angegeben und reference nicht."
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "7c0a0502cde5c500d7928ad832a03417",
+                            "name": "A12_EXCLUDE_COMPUTATIONS_INVALID",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\nThe field excludeComputations may only be set to true if usageType is \"complexType\".\n\n####"
+                              }
+                            ],
+                            "Rule": {
+                              "errorEntityRelPath": "../excludeComputations",
+                              "errorCode": "EXCLUDE_COMPUTATIONS_INVALID",
+                              "errorCondition": "FieldFilled(excludeComputations)\nAnd FieldNotFilled(reference)",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "Internal Error: excludeComputations filled and reference not filled."
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Interner Fehler: excludeComputations angegeben und reference nicht."
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "Rule",
+                            "id": "2229c10157cdfa25eaf5e6ac785d0d6a",
+                            "name": "A12_USAGE_TYPE_INVALID",
+                            "internalDescription": [
+                              {
+                                "locale": "de_DE",
+                                "text": "A12 only\n\n####"
+                              }
+                            ],
+                            "Rule": {
+                              "errorEntityRelPath": "../../usageType",
+                              "errorCode": "USAGE_TYPE_INVALID",
+                              "errorCondition": "FieldFilled(reference)\nAnd [../usageType] == \"metadata\"",
+                              "severity": "ERROR",
+                              "errorMessage": [
+                                {
+                                  "locale": "en_US",
+                                  "text": "Internal Error: usageType and reference not consistent"
+                                },
+                                {
+                                  "locale": "de_DE",
+                                  "text": "Interner Fehler: usageType und reference werden nicht konsistent verwendet."
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "5915d303094c41218ae303e329a514e0",
+                      "name": "A12_ID_MISSING",
+                      "annotations": [
+                        {
+                          "name": "_mgmtp.a12.kernel.BULK_MODEL",
+                          "value": "GroupFilled(RuleGroup) and FieldNotFilled(id)"
+                        }
+                      ],
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "A12 only\n\n####"
+                        }
+                      ],
+                      "Rule": {
+                        "errorEntityRelPath": "../id",
+                        "errorCode": "ID_MISSING",
+                        "errorCondition": "FieldNotFilled(id)",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "The id has to be specified."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Die Id muss angegeben werden."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "780f3b647c8ee79f3aa54f21f10dba38",
+                      "name": "NAME_MISSING",
+                      "annotations": [
+                        {
+                          "name": "_mgmtp.a12.kernel.BULK_MODEL",
+                          "value": "GroupFilled(RuleGroup) and FieldNotFilled(name)"
+                        }
+                      ],
+                      "Rule": {
+                        "errorEntityRelPath": "../name",
+                        "errorCode": "NAME_MISSING",
+                        "errorCondition": "FieldNotFilled(name)",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "The name has to be specified."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Der Kontextname muss angegeben werden."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "a2f6b61f9b2827ecead8173ef1876c5c",
+                      "name": "NAME_STARTS_WITH_XML_A12DV",
+                      "Rule": {
+                        "errorEntityRelPath": "../name",
+                        "errorCode": "NAME_STARTS_WITH_XML_A12DV",
+                        "errorCondition": "FieldFilled(name)\nAnd FieldFilled(../MetaData/ext_a12Dv)\nAnd [../MetaData/ext_a12Dv] == True\nAnd [name] PatternMatched \"[xX][mM][lL].*\"",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "The name may not start with xml in any form of upper and lower case letters."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "In einer A12-DV darf der Kontextname nicht mit XML beginnen in jeder Form von Groß- und Kleinschreibung."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "3b371dd57eb5767a4e6d615194fa53f3",
+                      "name": "A12_NAME_STARTS_WITH_UNDERSCORE_AND_NOT_METADATA",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "A12 only\nThe name of a group may only begin with an underscore if usageType is metadata.\n\n####"
+                        }
+                      ],
+                      "Rule": {
+                        "errorEntityRelPath": "../name",
+                        "errorCode": "NAME_STARTS_WITH_UNDERSCORE_AND_NOT_METADATA",
+                        "errorCondition": "(FieldNotFilled(usageType)\n    Or [usageType] != \"metadata\")\nAnd [name] PatternMatched \"_.*\"",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "A group name may only begin with an underscore if it is a group with meta data."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Ein Kontextname darf nur für die Verwendungsart 'Metadaten' mit einem Unterstrich beginnen."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "e9ba42549d1ce9b7c2702077ac30fe7e",
+                      "name": "A12_NAME_STARTS_WITH_UNDERSCORE_AND_WRONG_PATTERN",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "A12 only\nThe name of a metadata group may only begin with an underscore if it is '__meta' or starts with '__attachment_meta'.\n\n####"
+                        }
+                      ],
+                      "Rule": {
+                        "errorEntityRelPath": "../name",
+                        "errorCode": "NAME_STARTS_WITH_UNDERSCORE_AND_WRONG_PATTERN",
+                        "errorCondition": "[usageType] == \"metadata\"\nAnd [name] PatternMatched \"_.*\"\nAnd [name] PatternViolated \"__(meta|attachment_meta.*)\"",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "The name of a group may only begin with an underscore if it is '__meta' or starts with '__attachment_meta'."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Der Name der Gruppe beginnt mit einem Unterstrich. Dies ist nur für den Namen '__meta' und Namen, die mit '__attachment_meta' beginnen, erlaubt."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "657977b193e0f548effd936d7ae05acb",
+                      "name": "REPEATABILITY_MISSING",
+                      "Rule": {
+                        "errorEntityRelPath": "../repeatability",
+                        "errorCode": "REPEATABILITY_MISSING",
+                        "errorCondition": "FieldFilled(../MetaData/ext_a12Dv)\nAnd [../MetaData/ext_a12Dv] == True\nAnd FieldFilled(name)\nAnd FieldNotFilled(repeatability)",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "The repeatability has to be specified."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Für Kontext '$name.value$' wurde keine maximale Wiederholbarkeit spezifiziert. Dies ist für eine A12-DV aber verpflichtend."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "ee6788c33101d1823a9f97f89f46edc6",
+                      "name": "REPEATABILITY_TOO_BIG",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "There is a technical limit to the repeatability to avoid dod attacks - 1.999.999.999\n\n####"
+                        }
+                      ],
+                      "Rule": {
+                        "errorEntityRelPath": "../repeatability",
+                        "errorCode": "REPEATABILITY_TOO_BIG",
+                        "errorCondition": "FieldFilled(name)\nAnd FieldFilled(repeatability)\nAnd [repeatability] > 1999999999",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "Group '$name.value$': The specified value for the repeatability of '$repeatability.value$' is greater than the maximum permitted value of 1,999,999,999."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Kontext '$name.value$': Die Angabe für max. Wiederholung von '$repeatability.value$' ist größer als der erlaubte maximale Wert von 1.999.999.999."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "babe20f91237de3662fbffc273c90654",
+                      "name": "REPEATABILITY_INVALID",
+                      "Rule": {
+                        "errorEntityRelPath": "../repeatability",
+                        "errorCode": "REPEATABILITY_INVALID_A12",
+                        "errorCondition": "FieldFilled(../MetaData/ext_a12Dv)\nAnd [../MetaData/ext_a12Dv] == True\nAnd FieldFilled(repeatability)\nAnd [repeatability] == 0",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "The repeatability has to be greater than zero."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Die maximale Wiederholbarkeit wurde mit Null spezifiziert. Dies ist für eine A12-DV nicht zulässig."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "fe9311ede11eba00688f4a0d8e96ab68",
+                      "name": "SORTINFO_INVALID",
+                      "Rule": {
+                        "errorEntityRelPath": "../repeatability",
+                        "errorCode": "SORTINFO_INVALID",
+                        "errorCondition": "FieldFilled(name)\nAnd FieldFilled(repeatability)\nAnd [repeatability] == 1\nAnd AtLeastOneGroupFilled(SortInfo/SortFields*)",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "A field has been marked as a sort field, but group '$name.value$' is not repeatable."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Es wurde ein Feld als Sortierfeld markiert, obwohl der Kontext '$name.value$' nicht wiederholbar ist."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "5e0d888d74e93d8c4b70074d63e1a5f4",
+                      "name": "A12_DUPLICATE_NAME_WITHIN_GROUP",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "A12 only \nensures the name is not duplicated in the parent group\n\n####"
+                        }
+                      ],
+                      "Rule": {
+                        "errorEntityRelPath": "../name",
+                        "errorCode": "DUPLICATE_NAME_WITHIN_GROUP",
+                        "errorCondition": "FieldFilled(name)\nAnd CustomCondition DuplicateNameWithinGroup",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "The specified name is already used by another element inside the group."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Der gewählte Name wird bereits von einem anderen Element innerhalb der Gruppe verwendet."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "ecf246f1303913d4bd0b4b7a5cef08c3",
+                      "name": "A12_LABEL_LANGUAGES_DUPLICATE",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "A12 only\n\n####"
+                        }
+                      ],
+                      "Rule": {
+                        "errorEntityRelPath": "../Labels/language",
+                        "errorCode": "LABEL_LANGUAGES_DUPLICATE",
+                        "errorCondition": "RepetitionNotUnique(Labels/language)",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "For the language '$Labels/language.value$' more than one text is specified."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Für die Sprache '$Labels/language.value$' wurde mehr als ein Text angegeben."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "Group",
+                "id": "34f237cf39d50ae33b67df632a23d51d",
+                "name": "MetaData",
+                "Group": {
+                  "repeatability": 1,
+                  "elements": [
+                    {
+                      "type": "Field",
+                      "id": "8175b367688014c54f952cb86c0f05ef",
+                      "name": "ext_baseYearSpecified",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "specifies if the model is related to a specific base year. This allows dates or date ranges without specifying a year or date ranges.\n\n####"
+                        }
+                      ],
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "BOOLEAN_1"
+                          }
+                        },
+                        "global": true,
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "dbcaa64c1dbced3fe46c47db088b486c",
+                      "name": "ext_a12Dv",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "specifies if a model is an A12 model.\nIn A12 this is always true.\n\n####"
+                        }
+                      ],
+                      "Field": {
+                        "fieldType": {
+                          "type": "TypeDefType",
+                          "TypeDefType": {
+                            "typeDefinitionId": "BOOLEAN_1"
+                          }
+                        },
+                        "global": true,
+                        "requirednessConfig": {
+                          "mode": "relativeToParent"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Field",
+                      "id": "3ff9c0a52577be5c62146899c4344c5b",
+                      "name": "ext_extmp",
+                      "Field": {
+                        "fieldType": {
+                          "type": "EnumerationType",
+                          "EnumerationType": {
+                            "values": [
+                              {
+                                "value": "false"
+                              },
+                              {
+                                "value": "true"
+                              }
+                            ]
+                          }
+                        },
+                        "global": true
+                      }
+                    },
+                    {
+                      "type": "Rule",
+                      "id": "e3ee45a0ad27f41ffe37ac999e5f21f5",
+                      "name": "META_DATA_MISSING",
+                      "internalDescription": [
+                        {
+                          "locale": "de_DE",
+                          "text": "mandatory fields\n\n####"
+                        }
+                      ],
+                      "Rule": {
+                        "errorEntityRelPath": "../ext_a12Dv",
+                        "errorCode": "META_DATA_MISSING",
+                        "errorCondition": "GroupNotFilled(RuleGroup)",
+                        "severity": "ERROR",
+                        "errorMessage": [
+                          {
+                            "locale": "en_US",
+                            "text": "Internal error: you have to provide the meta data."
+                          },
+                          {
+                            "locale": "de_DE",
+                            "text": "Interner Fehler: Metadaten müssen angegeben werden."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

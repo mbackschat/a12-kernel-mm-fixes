@@ -23,7 +23,6 @@ object MmCatalog {
     val variants = setOf(
         "repo",
         "codegen",
-        "import",
         "gui",
         "a12",
         "a12types",
@@ -228,8 +227,10 @@ data class ValidatorsProjectConfig(
         return "mmvalidators${visibility.artifactInfix()}-${modelName}-${version}-${variant}${if (isSpecialBulkVariation) "_bulk" else ""}".lowercase()
     }
     fun packagePrefix(): String {
-        // modelName, version and variant are already appended by the validation code generator (in some order), and the bulk property seems to get "smuggled in" via the dm id that is stored in the json or so - lets not duplicate it here for now
-        return "com.mgmtp.a12.kernel.mmvalidators${visibility.packageSuffix()}".lowercase()
+        val escapedVariant = (if("import".equals(variant.lowercase())) "escaped_" else "") + variant
+        // modelName and version are already appended by the validation code generator (in some order), and the bulk property seems to get "smuggled in" via the dm id that is stored in the json or so - lets not duplicate it here for now
+        // note/update: the variant is no longer appended by the validation code generator (since A12K-3986) -> added it here to the prefix (even though it looks a bit unexpected to have the variant before modelName and version)
+        return "com.mgmtp.a12.kernel.mmvalidators${visibility.packageSuffix()}.${escapedVariant}".lowercase()
         // a prefix that does not rely on this behavior by the validation code generator would look e.g. like:
         // return "com.mgmtp.a12.kernel.mmvalidators${if (visibility == Visibility.PUBLIC) "" else ".extmpinternal"}.${modelName}_${version}_${variant}${if (isSpecialBulkVariation) "_bulk" else ""}".lowercase()
     }

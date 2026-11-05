@@ -1,8 +1,15 @@
 [versions]
-extVersion = "55"
-currentKernelVersion = "30.8.1" # If changed you have also to adapt the kernel-core-runtime artifactId!!!. Additionally, minKernelCoreRuntimeApiVersion _should_ be updated to match the version that is transitively referenced by the core-runtime of currentKernelVersion
-minKernelCoreRuntimeApiVersion = "32.3.4" # actual version will/may be higher if the runtime depends on a higher version. we just need to specify _some_ (effectively minimum) version because cyclonedx will otherwise fail
-kernelRuntimeArtifactId = "30-8"
+extVersion = "56"
+currentKernelVersion = "31.0.1" # If changed you have to also
+# - adapt the kernel-core-runtime artifactId!
+# - minKernelCoreRuntimeApiVersion _should_ also be updated to match the version that is transitively referenced by the core-runtime of currentKernelVersion
+# - run "gradle generateThirdPartyNotice" and commit THIRD_PARTY_NOTICES and licenses/* if changed
+
+# NOTE: minKernelCoreRuntimeApiVersion is _not_ unused, even if intellij thinks so,
+# our conventions pulgins read this manually
+minKernelCoreRuntimeApiVersion = "33.0.2" # actual version will/may be higher if the runtime depends on a higher version. we just need to specify _some_ (effectively minimum) version because cyclonedx will otherwise fail
+kernelRuntimeArtifactId = "31-0"
+# com-mgmtp-a12-base is read from mm-typings-conventions; do not delete the following line (even though intellij thinks it is unused)
 com-mgmtp-a12-base = "29.0.1"
 org-junit-jupiter = "5.11.4"
 org-junit-platform = "1.11.4"
@@ -10,13 +17,9 @@ org-junit-platform = "1.11.4"
 
 [libraries]
 kernelBom = { module = "com.mgmtp.a12.kernel:kernel-bom", version.ref = "currentKernelVersion" }
-kernel-md-typed-accessor-gen = { module = "com.mgmtp.a12.kernel:kernel-md-typed-accessor-gen", version.ref = "currentKernelVersion" }
-kernel-md-document-v2 = { module = "com.mgmtp.a12.kernel:kernel-md-document-v2", version.ref = "currentKernelVersion" }
-kernel-md-util = { module = "com.mgmtp.a12.kernel:kernel-md-util", version.ref = "currentKernelVersion" }
 
 kernel-md-serializer = { module = "com.mgmtp.a12.kernel:kernel-md-serializer", version.ref = "currentKernelVersion" }
-kernel-md-model = { module = "com.mgmtp.a12.kernel:kernel-md-model", version.ref = "currentKernelVersion" }
-kernel-core-base-utils = { module = "com.mgmtp.a12.kernel:kernel-core-base-utils", version.ref = "currentKernelVersion" }
+kernel-md-facade = { module = "com.mgmtp.a12.kernel:kernel-md-facade", version.ref = "currentKernelVersion" }
 
 commonsCompress = "org.apache.commons:commons-compress:1.28.0"
 

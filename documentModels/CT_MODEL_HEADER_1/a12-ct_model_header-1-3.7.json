@@ -2,7 +2,7 @@
   "header": {
     "id": "CT_MODEL_HEADER_1",
     "modelType": "document",
-    "modelVersion": "28.4.0",
+    "modelVersion": "29.4.0",
     "locales": [
       {
         "code": "de_DE"
@@ -438,10 +438,7 @@
                       "locale": "de_DE",
                       "text": "Der Name darf nicht mit XML beginnen in jeder Form von Groß- und Kleinschreibung."
                     }
-                  ],
-                  "guiPatterns": {
-                    "dynamicEnumeration": "false"
-                  }
+                  ]
                 }
               }
             ]

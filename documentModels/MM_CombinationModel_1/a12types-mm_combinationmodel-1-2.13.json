@@ -2,7 +2,7 @@
   "header": {
     "id": "MM_CombinationModel_1",
     "modelType": "document",
-    "modelVersion": "28.4.0",
+    "modelVersion": "29.4.0",
     "locales": [
       {
         "code": "de_DE"
@@ -449,10 +449,7 @@
                       "locale": "de_DE",
                       "text": "Der Name darf nicht mit XML beginnen in jeder Form von Groß- und Kleinschreibung."
                     }
-                  ],
-                  "guiPatterns": {
-                    "dynamicEnumeration": "false"
-                  }
+                  ]
                 }
               }
             ]
@@ -691,10 +688,7 @@
                             "locale": "de_DE",
                             "text": "Es muss ein Modell ausgewählt werden, welches die Elemente enthält, die hinzugefügt werden sollen."
                           }
-                        ],
-                        "guiPatterns": {
-                          "dynamicEnumeration": "false"
-                        }
+                        ]
                       }
                     },
                     {
@@ -715,10 +709,7 @@
                             "locale": "de_DE",
                             "text": "Es muss ein Modell ausgewählt werden, welches die Elemente enthält, die ausgewählt werden sollen."
                           }
-                        ],
-                        "guiPatterns": {
-                          "dynamicEnumeration": "false"
-                        }
+                        ]
                       }
                     },
                     {
@@ -739,10 +730,7 @@
                             "locale": "de_DE",
                             "text": "Es muss ein Modell ausgewählt werden, welches die Elemente enthält, die hinzugefügt werden sollen."
                           }
-                        ],
-                        "guiPatterns": {
-                          "dynamicEnumeration": "false"
-                        }
+                        ]
                       }
                     },
                     {
@@ -763,10 +751,7 @@
                             "locale": "de_DE",
                             "text": "Es darf kein Additivmodell ausgewählt sein."
                           }
-                        ],
-                        "guiPatterns": {
-                          "dynamicEnumeration": "false"
-                        }
+                        ]
                       }
                     },
                     {
@@ -787,10 +772,7 @@
                             "locale": "de_DE",
                             "text": "Es darf kein Selektionsmodell ausgewählt sein."
                           }
-                        ],
-                        "guiPatterns": {
-                          "dynamicEnumeration": "false"
-                        }
+                        ]
                       }
                     },
                     {
@@ -811,10 +793,7 @@
                             "locale": "de_DE",
                             "text": "Es darf kein Dekorationsmodell ausgewählt sein."
                           }
-                        ],
-                        "guiPatterns": {
-                          "dynamicEnumeration": "false"
-                        }
+                        ]
                       }
                     }
                   ]
@@ -838,10 +817,7 @@
                       "locale": "de_DE",
                       "text": "Das Additivmodell wurde mehrfach angegeben."
                     }
-                  ],
-                  "guiPatterns": {
-                    "dynamicEnumeration": "false"
-                  }
+                  ]
                 }
               }
             ]

@@ -64,8 +64,10 @@ Common tasks:
 The build config of this repo can be tested as follows:
 
 ```
-gradle :test-mmdmjsons:test :test-mmtypings:test :test-mmvalidators:test
+gradle check
 ```
+
+(this should currently run the following tests `:test-mmdmjsons:test :test-mmtypings:test :test-mmvalidators:test`, but not trigger build incl codegen for all the analogous parametric subprojects)
 
 ---
 

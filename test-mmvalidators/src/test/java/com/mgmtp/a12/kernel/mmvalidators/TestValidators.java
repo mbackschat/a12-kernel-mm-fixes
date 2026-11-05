@@ -12,7 +12,7 @@ public class TestValidators {
     void jarContainsFactoryForPublicDV() {
         // compile-time FQN + minimal runtime touch: obtain INSTANCE and access meta/validator
         // NOTE: keep fqn here, don't replace by import. It should be as explicit as possible because we want to test that the fqn is as expected, e.g. that it contains ".extmpinternal."
-        var f = com.mgmtp.a12.kernel.mmvalidators.extmpinternal.a12_mm_selectionmodel__0032.Factory_a12_mm_selectionmodel__0032.getInstance();
+        var f = com.mgmtp.a12.kernel.mmvalidators.extmpinternal.a12.mm_selectionmodel__0032.Factory_mm_selectionmodel__0032.getInstance();
         assertNotNull(f);
         IMetaModel meta = f.getMetaObject();
         assertNotNull(meta);
@@ -24,7 +24,7 @@ public class TestValidators {
     void jarContainsFactoryForNonPublicDV() {
         // compile-time FQN + minimal runtime touch
         // NOTE: keep fqn here, don't replace by import. It should be as explicit as possible because we want to test that the fqn is as expected, e.g. that it contains ".extmpinternal."
-        var f = com.mgmtp.a12.kernel.mmvalidators.extmpinternal.a12_mm_smm_fieldtypechecks__0031.Factory_a12_mm_smm_fieldtypechecks__0031.getInstance();
+        var f = com.mgmtp.a12.kernel.mmvalidators.extmpinternal.a12.mm_smm_fieldtypechecks__0031.Factory_mm_smm_fieldtypechecks__0031.getInstance();
         assertNotNull(f);
         IMetaModel meta = f.getMetaObject();
         assertNotNull(meta);
@@ -36,7 +36,7 @@ public class TestValidators {
     void validatorsForSmeModelStayExtmpinternal() {
         // MM_MappingModel-2 has a12internal dmjsons for SME, but validators must still be extmpinternal
         // NOTE: keep fqn here, don't replace by import. It should be as explicit as possible because we want to test that the fqn is as expected, e.g. that it contains ".extmpinternal."
-        var f = com.mgmtp.a12.kernel.mmvalidators.extmpinternal.a12_mm_mappingmodel__0032.Factory_a12_mm_mappingmodel__0032.getInstance();
+        var f = com.mgmtp.a12.kernel.mmvalidators.extmpinternal.a12.mm_mappingmodel__0032.Factory_mm_mappingmodel__0032.getInstance();
         assertNotNull(f);
         IMetaModel meta = f.getMetaObject();
         assertNotNull(meta);

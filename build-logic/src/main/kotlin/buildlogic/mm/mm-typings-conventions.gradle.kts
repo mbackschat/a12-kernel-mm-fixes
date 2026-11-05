@@ -35,7 +35,7 @@ val typingsGenerator = configurations.maybeCreate("typingsGenerator")
 
 val generateTypingsTask = tasks.register<JavaExec>("generateTypings") {
     inputs.files(recreateIncludesInDm) // should also create the task dependency
-    val genSrcRoot = File(projectDir, "genSrc/java")
+    val genSrcRoot = File(projectDir, "genSrc")
     outputs.dir(genSrcRoot)
     doFirst { genSrcRoot.mkdirs() } // note: only local variables should be passed into doFirst, to avoid implicit references to 'project' which would break configuration caching
     classpath = typingsGenerator
@@ -69,14 +69,15 @@ dependencies {
         add("api", project(extInclude.depProjPath)) // api because the included (e.g. header) classes occur in signatures
     }
     compileOnly("com.mgmtp.a12.base:base-model-utils:$baseModelUtilsVersion") // for annotations like @Experimental
-    // [A12K-3960] TODO switch back to regular $currentKernelVersion after the 31.0.0 release. Until then, we need to generate the typings with a non-release 31.x version in order to already include changes to the generatde classes like capitalization of enum class names
-    typingsGenerator("com.mgmtp.a12.kernel:kernel-md-typed-accessor-gen:31.0.0-pre.3")
-    //typingsGenerator("com.mgmtp.a12.kernel:kernel-md-typed-accessor-gen:$currentKernelVersion")
+    // Temporary workaround for Gradle bug https://github.com/gradle/gradle/issues/11625: instead of depending on the
+    // kernel-md-facade module directly (which triggers the bug), we depend on a fat jar bundling it and all transitive
+    // deps. Restore the direct dependency below and drop the project dependency once the bug is fixed; see
+    // facade-fatjar-workaround-gradle-11625/build.gradle.kts for the rationale and the removal + verification steps.
+    // typingsGenerator("com.mgmtp.a12.kernel:kernel-md-facade:$currentKernelVersion") // for TypedAccessorGenerator, can use a different kernel version as long as generated typings and the document-v2 runtime classes are compatible
+    typingsGenerator(project(mapOf("path" to ":facade-fatjar-workaround-gradle-11625", "configuration" to "facadeFatJarElements")))
 }
 
-evaluationDependsOn(":test-mmtypings") // not sure if we strictly need this evaluationDependsOn dependency
-tasks.matching { it.name.equals("test") }.configureEach {
-    dependsOn(":test-mmtypings:test")
-}
+// tests are shared across all mmtypings subprojects, in the :test-mmtypings subproject
+delegateTestsToSharedTestProject(":test-mmtypings")
 
 

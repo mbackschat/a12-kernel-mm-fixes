@@ -13,6 +13,7 @@ version = getVersionFor(rootProject.projectDir, cfg.modelName, cfg.version)
 val label = labelFromVersion(version.toString())
 
 val genSrcDir = project.layout.buildDirectory.dir("genSrc/java").get().asFile
+val genSrcSourcesRootDir = "${genSrcDir}/src/main/java" // since A12K-3621, the generator adds this subdirectory
 val generateValidatorsConfig = configurations.maybeCreate("generateValidatorsConfig")
 val generateValidators = tasks.register<JavaExec>("generateValidators") {
     // Note: it is important that origDmJsonPath is only resolved here (and not outside of the task during evaluation of the project itself),
@@ -30,7 +31,6 @@ val generateValidators = tasks.register<JavaExec>("generateValidators") {
     val argsLocal = listOf(
         "-l", "JAVA",
         "-p", cfg.packagePrefix(),
-        "-vn", cfg.variant,
         "-i", dmJsonPath.absolutePath,
         "-o", genSrcDir.absolutePath,
     )
@@ -41,7 +41,7 @@ val generateValidators = tasks.register<JavaExec>("generateValidators") {
 sourceSets {
     main {
         java {
-            srcDir(generateValidators)
+            srcDir(files(genSrcSourcesRootDir).builtBy(generateValidators))
         }
         // No resources; DM JSONs are provided by :mmdmjsons artifacts
     }
@@ -60,15 +60,15 @@ dependencies {
     // CLI for generating validators; allow bootstrapping mode to exclude mm_common-codegen (the same environment
     // variable dynamically disables metamodel-based validation of inputs in the code generator, disabling the need for
     // the mm_common dependency)
-    generateValidatorsConfig("com.mgmtp.a12.kernel:kernel-md-model:$kernelVersion") {
+    generateValidatorsConfig("com.mgmtp.a12.kernel:kernel-md-facade:$kernelVersion") {
         if (System.getenv("A12_KERNEL_BOOTSTRAP_VALIDATORS_DISABLE_MM_VALIDATION")?.toBoolean() == true) {
             exclude(group = "com.mgmtp.a12.kernel", module = "kernel-mm_common-codegen-v2")
         }
     }
+    // Provide an SLF4J binding so the generator's log output is not silently dropped (otherwise SLF4J defaults to NOP).
+    // Using require (not strictly), so Gradle's conflict resolution can upgrade to whichever version kernel-md-facade pulls transitively.
+    generateValidatorsConfig("org.slf4j:slf4j-simple") { version { require("2.0.17") } }
 }
 
-// tests are shared accross all mmvalidators subprojects -> don't test here, but depend on :test-mmvalidators:test
-evaluationDependsOn(":test-mmvalidators")
-tasks.matching { it.name.equals("test") }.configureEach {
-    dependsOn(":test-mmvalidators:test")
-}
+// tests are shared across all mmvalidators subprojects, in the :test-mmvalidators subproject
+delegateTestsToSharedTestProject(":test-mmvalidators")

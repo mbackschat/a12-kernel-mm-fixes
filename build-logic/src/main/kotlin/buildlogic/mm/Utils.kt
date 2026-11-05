@@ -4,6 +4,9 @@ import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.node.ArrayNode
 import com.fasterxml.jackson.databind.node.ObjectNode
+import org.gradle.api.Project
+import org.gradle.api.tasks.testing.Test
+import org.gradle.kotlin.dsl.named
 import java.io.File
 import java.util.Properties
 import java.util.Locale
@@ -517,4 +520,31 @@ fun git_push(rootProjectDir: File, branch: String): Int {
         println("Push to origin/$branch not successful: ${res.err}")
     }
     return status
+}
+
+/**
+ * Wires the `check` and `test` tasks of one of the (hundreds of) near-identical parametric subprojects to the
+ * corresponding tasks of the given shared test subproject, which holds the tests covering all subprojects of that kind.
+ *
+ * The parametric subprojects have no test sources of their own, and running `check`/`test` on them must not trigger
+ * codegen and compilation of their (generated) production sources - otherwise an aggregate `gradle check` or
+ * `gradle test` would build all of the hundreds of parametric subprojects.
+ *
+ * Note that merely disabling the local `test` task would not be enough: Gradle skips the action of a disabled task,
+ * but still executes its dependencies. So both tasks are additionally detached from everything they would pull in by
+ * default (`check` -> `test` -> `compileTestJava` -> `compileJava` -> codegen).
+ */
+fun Project.delegateTestsToSharedTestProject(sharedTestProjectPath: String) {
+    evaluationDependsOn(sharedTestProjectPath)
+    val noFiles = files()
+    tasks.named("check") {
+        setDependsOn(listOf("$sharedTestProjectPath:check"))
+    }
+    tasks.named<Test>("test") {
+        enabled = false
+        setDependsOn(listOf("$sharedTestProjectPath:test"))
+        // the test classes/classpath are the remaining (implicit) dependencies on the compile & codegen tasks
+        testClassesDirs = noFiles
+        classpath = noFiles
+    }
 }

@@ -43,5 +43,5 @@ publishing {
 
 // only publish after tests pass (if any tests are configured in the subproject) (affects java/maven publications, not the npm publications)
 tasks.withType<AbstractPublishToMaven>().configureEach {
-    dependsOn(tasks.test)
+    dependsOn(tasks.check)
 }
